@@ -2,37 +2,180 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+body {
+  background-color: white;
+  
   }
+  
+  h1{
+    padding-top:'40px';
+    text-align: 'center';
+
+  }
+
+  .wave{
+  background: 'green';
+color:white;
+text-align: 'center';
+
+  }
+
+  
+  
+  .card {
+  
+    width:20rem;
+  }
+  
+  .card:hover{
+      box-shadow:5px 10px 20px 1px rgba(0,0,0,0.253)!important
+  }
+
+  .card-body {
+    text-align: center;
+    padding: 3rem 0!important;
+  }
+
+  .card-text{
+    
+    font-size: 1rem;
+    padding:0.4rem 1.9rem
+  }
+
+  .container-fluid .row {
+    padding-top:6rem
+  }
+
+
+  .headerImg {
+    height: 500px;
+  }
+/*navbar styling*/
+  /* change the background color */
+.navbar-custom {
+  background-color: grey;
+}
+/* not active */
+.nav-pills .pill-1 .nav-link:not(.active) {
+  background-color: rgba(255, 0, 0, 0.5);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.nav-pills .pill-2 .nav-link:not(.active) {
+  background-color: rgba(0, 250, 0, 0.5);
+}
+
+.nav-pills .pill-3 .nav-link:not(.active) {
+  background-color: rgba(0, 0, 250, 0.5);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+
+/* active (faded) */
+
+
+.nav-pills .pill-1 .nav-link {
+  background-color: rgba(255, 0, 0, 0.2);
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.nav-pills .pill-2 .nav-link {
+  background-color: rgba(0, 250, 0, 0.2);
+}
+
+.nav-pills .pill-3 .nav-link {
+  background-color: rgba(0, 0, 250, 0.2);
+  color: white;
+}
+
+
+
+/*Card*/
+
+/*card footer icons*/
+
+.card-footer{
+  size:"2x";
+  animation: 'spin';
+  
+  color:'white';
+  padding:'20px' ;
+  
+
+}
+
+.slow-spin {
+  -webkit-animation: fa-spin 5s infinite linear;
+  animation: fa-spin 5s infinite linear;
+}
+
+.column2box {
+  columns: 2 auto;
+}
+
+/*enlarge icon on mouse over*/
+.icon:hover{
+  size:'4x'
+}
+
+.h1Header { 
+  animation: fadeInAnimation ease 3s; 
+  animation-iteration-count: 1; 
+  animation-fill-mode: forwards; 
+} 
+
+@keyframes fadeInAnimation { 
+  0% { 
+      opacity: 0; 
+  } 
+  100% { 
+      opacity: 1; 
+   } 
+} 
+
+.w3-animate-left{
+
+  position:relative;animation:animateleft 0.90s}
+  @keyframes animateleft{from{left:-300px;opacity:0} 
+  to{left:0;opacity:1};
+  
+}
+
+
+.animatable {
+  
+  /* initially hide animatable objects */
+  visibility: hidden;
+  
+  /* initially pause animatable objects their animations */
+  -webkit-animation-play-state: paused;   
+  -moz-animation-play-state: paused;     
+  -ms-animation-play-state: paused;
+  -o-animation-play-state: paused;   
+  animation-play-state: paused; 
+}
+
+
+@-o-keyframes fadeInUp {
+	0% {
+		opacity: 0;
+		-o-transform: translateY(20px);
+	}
+
+	100% {
+		opacity: 1;
+		-o-transform: translateY(0);
+	}
+}
+
+@keyframes fadeInUp {
+	0% {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }

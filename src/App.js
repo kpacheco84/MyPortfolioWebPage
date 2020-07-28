@@ -1,26 +1,111 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {Component} from 'react';
 import './App.css';
 
-function App() {
+import Projects from './Components/Projects'
+import { BrowserRouter, Route,Switch, Redirect,PrivateRoute, Router,RouteProps} from 'react-router-dom';
+//import { NavLink, Link } from 'react-router-dom';
+//import {Navbar,Modal,Button,Row,Col, Form,ButtonGroup, Alert,ToggleButton, ToggleButtonGroup} from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+//import bootstrap from 'bootstrap'
+import Navigation from './Components/Navigation';
+import Header from './Components/Header';
+import {Navbar,Modal,Button,Row,Col, Form,ButtonGroup, Alert,ToggleButton, ToggleButtonGroup, CardGroup, Container} from 'react-bootstrap';
+import Footer from './Components/Footer';
+import AboutMe from './Components/AboutMe';
+import Education from './Components/Education';
+import Skills from './Components/Skills';
+import Experience from './Components/Experience';
+/* Make each section needed*/
+//
+//as you scroll down to each section fade up from the bottom the title of each section. jquery commented out below. not sure where to place it
+// change pill color on hoover and active
+// change to active when focused on specific container
+// add image to education and possibly to the projects image
+// want to make some wavy edges have svg but not sure how to place it correctly, seems it has to be inside the container
+//make containers responsive
+//Properly classify each skill and desciptions
+//enlarge icons you hover over
+import $ from "jquery";
+
+
+
+export class App extends React.Component{
+  
+  /*
+jQuery(function($) {
+  
+  // Function which adds the 'animated' class to any '.animatable' in view
+  var doAnimations = function() {
+    
+    // Calc current offset and get all animatables
+    var offset = $(window).scrollTop() + $(window).height(),
+        $animatables = $('.animatable');
+    
+    // Unbind scroll handler if we have no animatables
+    if ($animatables.length == 0) {
+      $(window).off('scroll', doAnimations);
+    }
+    
+    // Check all animatables and animate them if necessary
+		$animatables.each(function(i) {
+       var $animatable = $(this);
+			if (($animatable.offset().top + $animatable.height() - 20) < offset) {
+        $animatable.removeClass('animatable').addClass('animated');
+			}
+    });
+
+	};
+  
+  // Hook doAnimations on scroll, and trigger a scroll
+	$(window).on('scroll', doAnimations);
+  $(window).trigger('scroll');
+
+});
+*/
+  
+  render() {
+    
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+   <div>
+     <Container fluid='true' id = 'home'>
+     
+    <Navigation></Navigation>
+    
+    
+    <Header></Header>
+   
+ <Container fluid='true' style={{height:'500px', backgroundSize: '50% 100%',
+backgroundColor:'white',backgroundRepeat: 'no-repeat',width:'100%'
+, margin:'0px 100px 0px 0px'}}>
+      <AboutMe></AboutMe>
+      
+</Container>
+     
+      <Container id = 'projects' fluid='true' style={{height:'700px',backgroundSize: '100%',
+backgroundColor:'#ffcccc',backgroundRepeat: 'no-repeat',width:'100%'
+, margin:'0px 100px 0px 0px'}}>
+  <Projects></Projects>
+    </Container>
+    <Container id = 'skills' fluid='true' style={{height:'700px',backgroundSize: '50% 100%',
+backgroundColor:'white',backgroundRepeat: 'no-repeat',width:'100%'
+, margin:'0px 100px 0px 0px'}}>
+   <Skills></Skills>
+   </Container>
+   <Container id ='experience' fluid='true' style={{height:'900px', width:'auto',backgroundSize: '100%',
+backgroundColor:'#ccffff',backgroundRepeat: 'no-repeat',width:'100%'
+, margin:'0px 100px 0px 0px'}}>
+    <Experience></Experience>
+    </Container>
+    <Container id = 'education' fluid='true' style={{height:'700px',backgroundSize: '50% 100%',
+backgroundColor:'white',backgroundRepeat: 'no-repeat',width:'100%'
+, margin:'0px 100px 0px 0px'}}>
+     <Education></Education>
+     </Container>
+    <Footer></Footer>
+   
+  </Container>
     </div>
   );
 }
-
+}
 export default App;
