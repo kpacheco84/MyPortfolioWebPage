@@ -5,9 +5,9 @@ import { Container} from 'react-bootstrap';
 import headerImg from '../assets/farzad-nazifi-p-xSl33Wxyc-unsplash.jpg'
 
 
-
 const  Header = () => {
 
+  
  
     return (
 <div>
@@ -16,6 +16,7 @@ const  Header = () => {
 <Container fluid='true' style={{backgroundImage:`url(${headerImg})`,height:'500px', width:'auto',backgroundSize: '50% 100%',
 backgroundColor:'black',backgroundRepeat: 'no-repeat',width:'100%'
 , margin:'0px 100px 0px 0px'}}>
+   
     
     <br></br>
     <br></br>

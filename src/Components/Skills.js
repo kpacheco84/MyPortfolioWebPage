@@ -8,10 +8,10 @@ import headerImg from '../assets/farzad-nazifi-p-xSl33Wxyc-unsplash.jpg'
 const  Skills = () => {
 
     const skills = [
-        {image:'database',title: "Database & Query Languages & Deployment",tech: ['AWS S3','AWS EC2','AWS RDS','GitHub Pages','SQL','PostgresSQL','MySQL']},
+        {image:'database',title: "Database & Query Languages",tech: ['SQL','PostgresSQL','MySQL']},
         {image:'code',title: "Programming Languages & Frameworks", tech: ['React','Bootstrap','JQuery', 'Javascript']},
-        {image:'globe',title: "Collaboration Tools", tech: ['Jira','Asana','Slack','Github']}/*,
-        {image:"./images/MyPic.jpg",title: "Dynamic Registration Form", desc: 'Basic Register Form',tech: ['React','Bootstrap','CSS']}*/
+        {image:'globe',title: "Collaboration Tools", tech: ['Jira','Asana','Slack','Github']},
+        {image:"rocket",title: "Deployment Tools", tech: ['AWS S3','AWS EC2','AWS RDS','AWS Amplify','GitHub Pages']}
     
     ];
     
@@ -24,7 +24,7 @@ const  Skills = () => {
     const renderCard = (card,index)=>{
       
         return(
-            <div className ='col-md-4' id = 'skills'>
+            <div className ='p-3' id = 'skills'>
         <Card  style={{ width: '18rem',height:'400px'}} key = {index} imgsrc = {card.image}>
         <Card.Header style = {{backgroundColor:'#0EE5C4',height:'100px'}}>
         <FontAwesome

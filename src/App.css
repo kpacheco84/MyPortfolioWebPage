@@ -53,42 +53,12 @@ text-align: 'center';
   }
 /*navbar styling*/
   /* change the background color */
-.navbar-custom {
-  background-color: grey;
-}
-/* not active */
-.nav-pills .pill-1 .nav-link:not(.active) {
-  background-color: rgba(255, 0, 0, 0.5);
-}
-
-.nav-pills .pill-2 .nav-link:not(.active) {
-  background-color: rgba(0, 250, 0, 0.5);
-}
-
-.nav-pills .pill-3 .nav-link:not(.active) {
-  background-color: rgba(0, 0, 250, 0.5);
-  color: white;
-}
-
-
-/* active (faded) */
-
-
-.nav-pills .pill-1 .nav-link {
-  background-color: rgba(255, 0, 0, 0.2);
-  color: white;
-}
-
-.nav-pills .pill-2 .nav-link {
-  background-color: rgba(0, 250, 0, 0.2);
-}
-
-.nav-pills .pill-3 .nav-link {
-  background-color: rgba(0, 0, 250, 0.2);
-  color: white;
-}
-
-
+  a.coral.nav-link.active {
+    background-color: #ff8080;
+  }
+  .coral.nav-link:hover {
+    background-color: #0EE5C4;
+  }
 
 /*Card*/
 
@@ -114,9 +84,26 @@ text-align: 'center';
 }
 
 /*enlarge icon on mouse over*/
-.icon:hover{
-  size:'4x'
+/*not working do i need to import anything>*/
+.transition {
+  -webkit-transform: scale(1.6); 
+  -moz-transform: scale(1.6);
+  -o-transform: scale(1.6);
+  transform: scale(1.6);
 }
+.scale {
+-webkit-transition: all .4s ease-in-out;
+-moz-transition: all .4s ease-in-out;
+-o-transition: all .4s ease-in-out;
+-ms-transition: all .4s ease-in-out;
+}
+
+.scale {
+  width:80px;
+  margin:25px;
+}
+
+
 
 .h1Header { 
   animation: fadeInAnimation ease 3s; 

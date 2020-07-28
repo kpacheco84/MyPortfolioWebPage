@@ -15,6 +15,7 @@ import AboutMe from './Components/AboutMe';
 import Education from './Components/Education';
 import Skills from './Components/Skills';
 import Experience from './Components/Experience';
+import ProjectPicsModal from './Components/ProjectPicsModal.js';
 /* Make each section needed*/
 //
 //as you scroll down to each section fade up from the bottom the title of each section. jquery commented out below. not sure where to place it
@@ -31,57 +32,59 @@ import $ from "jquery";
 
 export class App extends React.Component{
   
-  /*
-jQuery(function($) {
   
-  // Function which adds the 'animated' class to any '.animatable' in view
-  var doAnimations = function() {
-    
-    // Calc current offset and get all animatables
-    var offset = $(window).scrollTop() + $(window).height(),
-        $animatables = $('.animatable');
-    
-    // Unbind scroll handler if we have no animatables
-    if ($animatables.length == 0) {
-      $(window).off('scroll', doAnimations);
-    }
-    
-    // Check all animatables and animate them if necessary
-		$animatables.each(function(i) {
-       var $animatable = $(this);
-			if (($animatable.offset().top + $animatable.height() - 20) < offset) {
-        $animatable.removeClass('animatable').addClass('animated');
-			}
-    });
 
-	};
   
-  // Hook doAnimations on scroll, and trigger a scroll
-	$(window).on('scroll', doAnimations);
-  $(window).trigger('scroll');
-
-});
-*/
   
   render() {
+    let zigzag1 = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ff5500" fill-opacity="1" d="M0,192L288,128L576,192L864,288L1152,160L1440,64L1440,320L1152,320L864,320L576,320L288,320L0,320Z"></path></svg>`;
+  
+    $(document).ready(function() {
+      alert("document ready occurred!");
+      
+    // Function which adds the 'animated' class to any '.animatable' in view
+    var doAnimations = function() {
+      
+      // Calc current offset and get all animatables
+      var offset = $(window).scrollTop() + $(window).height(),
+          $animatables = $('.animatable');
+      
+      // Unbind scroll handler if we have no animatables
+      if ($animatables.length == 0) {
+        $(window).off('scroll', doAnimations);
+      }
+      
+      // Check all animatables and animate them if necessary
+      $animatables.each(function(i) {
+         var $animatable = $(this);
+        if (($animatable.offset().top + $animatable.height() - 20) < offset) {
+          $animatable.removeClass('animatable').addClass('animated');
+        }
+      });
+  
+    };
     
+    // Hook doAnimations on scroll, and trigger a scroll
+    $(window).on('scroll', doAnimations);
+    $(window).trigger('scroll');
+  
+  });
   return (
    <div>
      <Container fluid='true' id = 'home'>
      
     <Navigation></Navigation>
     
-    
     <Header></Header>
    
- <Container fluid='true' style={{height:'500px', backgroundSize: '50% 100%',
+ <Container fluid='true' style={{height:'500px', backgroundSize: '50% 100%',backgroundImage:{zigzag1},
 backgroundColor:'white',backgroundRepeat: 'no-repeat',width:'100%'
 , margin:'0px 100px 0px 0px'}}>
       <AboutMe></AboutMe>
       
 </Container>
      
-      <Container id = 'projects' fluid='true' style={{height:'700px',backgroundSize: '100%',
+      <Container id = 'projects' fluid='true' style={{height:'800px',backgroundSize: '100%',
 backgroundColor:'#ffcccc',backgroundRepeat: 'no-repeat',width:'100%'
 , margin:'0px 100px 0px 0px'}}>
   <Projects></Projects>
@@ -100,10 +103,19 @@ backgroundColor:'#ccffff',backgroundRepeat: 'no-repeat',width:'100%'
 backgroundColor:'white',backgroundRepeat: 'no-repeat',width:'100%'
 , margin:'0px 100px 0px 0px'}}>
      <Education></Education>
+     
      </Container>
+
+     <Container id = 'pics' fluid='true' style={{height:'700px',backgroundSize: '50% 100%',
+backgroundColor:'white',backgroundRepeat: 'no-repeat',width:'100%'
+, margin:'0px 100px 0px 0px'}}>
+     <ProjectPicsModal>hello</ProjectPicsModal>
+     </Container>
+     
     <Footer></Footer>
    
   </Container>
+  
     </div>
   );
 }

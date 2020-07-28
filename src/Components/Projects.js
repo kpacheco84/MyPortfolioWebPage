@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import '../App.css';
 import { NavLink, Link } from 'react-router-dom';
-import {Navbar,Modal,Button,Row,Col, Form,ButtonGroup, Alert,ToggleButton, ToggleButtonGroup, CardGroup} from 'react-bootstrap';
+import {Navbar,Modal,Button,Row,Col, Form,ButtonGroup, Alert,ToggleButton, ToggleButtonGroup, CardGroup, CardImg} from 'react-bootstrap';
 import {Card} from 'react-bootstrap';
 import MyPic from '../assets/MyPic.jpg'
 //use fontawesome
@@ -11,18 +11,29 @@ import Navigation from './Navigation'
 import Header from './Header'
 import $ from "jquery";
 //<Navigation></Navigation>
-
-
+//import images
+import fiu from '../assets/FIU-Panther.png'
+import phrase from '../assets/phrasehunter.png'
+import portfolio from '../assets/portfolio.png'
+import empAPI from '../assets/empAPI.png'
 
 
 
 const  Projects = () => {
- //click event for card to open module
+
+  $(document).ready(function(){
+    $('.scale').hover(function() {
+      console.log('moused over')
+        $(this).addClass('transition');
+    }, function() {
+        $(this).removeClass('transition');
+    });
+});
  
     const projects = [
-        {image:{MyPic},title: "My Portfolio",desc: 'One Page React App', tech: ['AWS S3','React','Bootstrap','CSS'],github:'https://github.com/kpacheco84/MyPortfolioWebPage.git',run:'https://kpacheco84.github.io/MyPortfolioWebPage/.'},
-        {image:"./images/MyPic.jpg",title: "OOP Phrase Game", desc: 'OOP Game',tech: ['AWS S3','React','Bootstrap','JQuery'],github:'https://github.com/kpacheco84/4-OOPGame.git',run:'https://kpacheco84.github.io/4-OOPGame/'},
-        {image:"./images/MyPic.jpg",title: "Employee API List", desc: 'API Employee Directory',tech: ['Github Pages','RestfulAPI','Bootstrap','CSS'],github:'https://github.com/kpacheco84/5-public_api_request-v1.git', run:'https://kpacheco84.github.io/5-public_api_request-v1/'}//,
+        {image:portfolio,title: "My Portfolio",desc: 'One Page React App', tech: ['AWS S3','React','Bootstrap','CSS'],github:'https://github.com/kpacheco84/MyPortfolioWebPage.git',run:'',pics:''},
+        {image:phrase,title: "OOP Phrase Game", desc: 'OOP Game',tech: ['AWS S3','React','Bootstrap','JQuery'],github:'https://github.com/kpacheco84/4-OOPGame.git',run:'https://kpacheco84.github.io/4-OOPGame/', pics:''},
+        {image:empAPI,title: "Employee API List", desc: 'API Employee Directory',tech: ['Github Pages','RestfulAPI','Bootstrap','CSS'],github:'https://github.com/kpacheco84/5-public_api_request-v1.git', run:'https://kpacheco84.github.io/5-public_api_request-v1/', pics:''}//,
         //{image:"./images/MyPic.jpg",title: "Dynamic Registration Form", desc: 'Basic Register Form',tech: ['React','Bootstrap','CSS']}
     
     ];
@@ -36,8 +47,9 @@ const  Projects = () => {
     const renderCard = (card,index)=>{
       
         return(
-            <div className ='col-md-4' >
-        <Card  style={{ width: '18rem',height:'400px'}} key = {index} imgsrc = {card.image}>
+            <div className ='col-md-4'  >
+        <Card  style={{ width: '25rem',height:'550px',padding:'0px'}} key = {index} >
+        <CardImg src={card.image} style={{height:'200px', width:'100%'}}></CardImg>
       <Card.Body>
         <Card.Title style={{paddingBottom:'10px'}}>{card.title}</Card.Title>
         <Card.Text>
@@ -50,14 +62,14 @@ const  Projects = () => {
                             </ul>
        
         </Card.Text>
-        <Button style={{backgroundColor:'#ff4d4d',border:'0px',marginTop:'20px'}} 
-        onClick= {()=>{alert('ShowModal')}}>Description</Button>
+        {/*}<Button style={{backgroundColor:'#ff4d4d',border:'0px',marginTop:'20px'}} 
+        onClick= {()=>{alert('ShowModal')}}>Description</Button>*/}
       </Card.Body>
-      <Card.Footer style = {{backgroundColor:'#ff4d4d',height:'100px'}}>
+      <Card.Footer  style = {{backgroundColor:'#ff4d4d',height:'100px'}} >
       <a href={card.github} target="_blank">
       
       <a href={card.run} target="_blank"><FontAwesome
-        className="super-crazy-colors slow-spin  icon"
+        className="super-crazy-colors slow-spin"
         name="desktop"
         //cssModule={faStyles}
         size="2x"
@@ -66,15 +78,15 @@ const  Projects = () => {
         
         <a href={card.github} target="_blank">
         <FontAwesome
-        className="super-crazy-colors slow-spin"
+        className="super-crazy-colors slow-spin icon"
         name="film"
         //cssModule={faStyles}
         size="2x"
         spin
         style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)',color:'white',padding:'20px' }}/>
           </a>
-      <FontAwesome className="super-crazy-colors slow-spin"
-      
+      <FontAwesome className="super-crazy-colors slow-spin icon"
+       
         name="github"
         size="2x"
         spin
@@ -98,7 +110,7 @@ const  Projects = () => {
             
           <div style={{textAlign:'center',paddingTop:'30px'}}>
             
-          <h1 className= 'class="block animatable fadeInUp' style={{paddingTop:'40px', textAlign:'center'}}>Projects</h1>
+          <h1 className= 'animatable' style={{paddingTop:'40px', textAlign:'center'}}>Projects</h1>
           <div className = 'row' style={{paddingLeft: '15%',marginTop:'80px', paddingRight:'15%'}}>
       
                         {projects.map(renderCard)}

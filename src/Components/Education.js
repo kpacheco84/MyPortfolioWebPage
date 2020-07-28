@@ -1,19 +1,20 @@
 import React, {Component} from 'react';
 import '../App.css';
-import { Container, Navbar,Nav, Card} from 'react-bootstrap';
+import { Container, Navbar,Nav, Card, CardImg} from 'react-bootstrap';
 import FontAwesome from 'react-fontawesome'
 import headerImg from '../assets/farzad-nazifi-p-xSl33Wxyc-unsplash.jpg';
 
-import teamtreehouse from '../assets/FIU-Panther.png';
-import fiupanther from '../assets/team-treehouse.png';
+import fiu from '../assets/FIU-Panther.png';
+import team from '../assets/team-treehouse.png'
+
 
 
 const  Education = () => {
 
     const edu = [
-        {image:'fiupanther',school: "Florida International University",title: 'Bachelors: Management Information Systems',dates: 'August 2013', info: 'GPA: 3.58'},
-        {image:'',school: "Florida International University",title: 'Certificate Business Intelligence',dates: 'August 2013', info: ''},
-        {image:'',school: "Team Treehouse",title: 'TechDegree: FullStack Javascript',dates: 'November 2018 - July 2019', info: ''},
+        {image:fiu,school: "Florida International University",title: 'Bachelors: Management Information Systems',dates: 'August 2013', info: 'GPA: 3.58'},
+        {image:fiu,school: "Florida International University",title: 'Certificate Business Intelligence',dates: 'August 2013', info: ''},
+        {image:team,school: "Team Treehouse",title: 'TechDegree: FullStack Javascript',dates: 'November 2018 - July 2019', info: ''},
   
         //{image:"./images/MyPic.jpg",title: "Dynamic Registration Form", desc: 'Basic Register Form',tech: ['React','Bootstrap','CSS']}
     
@@ -30,7 +31,8 @@ const  Education = () => {
       <Card.Body>
         <Card.Title style={{paddingBottom:'10px'}}>{card.school} </Card.Title>
         <Card.Subtitle>{card.title}</Card.Subtitle>
-        <Card.Text>{card.info}</Card.Text>
+        <CardImg src={card.image} style={{height:'180px', width:'50%', paddingTop:'20px'}}></CardImg>
+        <Card.Text style ={{paddingBottom:'20px'}}>{card.info}</Card.Text>
         
            <br></br>
            <br></br>
