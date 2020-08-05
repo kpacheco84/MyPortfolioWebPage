@@ -1,15 +1,10 @@
 
 import React, {Component} from 'react';
 import '../App.css';
-import { NavLink, Link } from 'react-router-dom';
-import {Navbar,Modal,Button,Row,Col, Form,ButtonGroup, Alert,ToggleButton, ToggleButtonGroup, CardGroup, CardImg, Carousel, CarouselItem, CarouselProps} from 'react-bootstrap';
-import {Card} from 'react-bootstrap';
-import MyPic from '../assets/MyPic.jpg'
-//use fontawesome
-import FontAwesome from 'react-fontawesome'
-//import faStyles from 'font-awesome/css/font-awesome.css'
-import Navigation from './Navigation'
-import Header from './Header'
+
+import { Carousel, CarouselItem, CarouselProps} from 'react-bootstrap';
+
+
 import $ from "jquery";
 //<Navigation></Navigation>
 //import images
@@ -45,7 +40,7 @@ const  ProjectPicsModal = () => {
               <Carousel.Item>
                 <img
                   className="d-block w-100"
-                  src="holder.js/800x400?text=First slide&bg=373940"
+                  src={projects.image}
                   alt="First slide"
                 />
                 <Carousel.Caption>
@@ -56,7 +51,7 @@ const  ProjectPicsModal = () => {
               <Carousel.Item>
                 <img
                   className="d-block w-100"
-                  src="holder.js/800x400?text=Second slide&bg=282c34"
+                  src="https://cdn.pixabay.com/photo/2020/07/22/08/17/power-station-5428427_960_720.jpg"
                   alt="Third slide"
                 />
             
@@ -68,7 +63,7 @@ const  ProjectPicsModal = () => {
               <Carousel.Item>
                 <img
                   className="d-block w-100"
-                  src="holder.js/800x400?text=Third slide&bg=20232a"
+                  src="https://cdn.pixabay.com/photo/2020/07/22/08/17/power-station-5428427_960_720.jpg"
                   alt="Third slide"
                 />
             

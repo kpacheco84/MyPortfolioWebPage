@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import '../App.css';
-import { Container, Navbar,Nav} from 'react-bootstrap';
-import FontAwesome from 'react-fontawesome'
-import headerImg from '../assets/farzad-nazifi-p-xSl33Wxyc-unsplash.jpg'
+
+
 
 
 
@@ -14,9 +13,10 @@ const  AboutMe = () => {
 <div id = 'aboutme' >
 
  
-<h1 style={{paddingTop:'60px', textAlign:'center'}}>About Me</h1>
+<h1 style={{paddingTop:'60px',
+ textAlign:'center'}}>About Me</h1>
 <br></br>
-<section style={{paddingLeft:'25%', paddingRight: '25%'}}>
+<section style={{paddingLeft:'25%', paddingRight: '25%', paddingBottom:'50px'}}>
  <p style={{textIndent:'50px'}}>       My love for programming and everything data began as a Customer Service Supervisor 
      when I was involved in the Business Requirements gathering and User Acceptance Testing 
      of our first custom Customer Service application. It was what lighted up a passion in me and 

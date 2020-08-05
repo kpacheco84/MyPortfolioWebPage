@@ -5,15 +5,14 @@ icons for the repo  and play on desktop*/
 
 import React, {Component} from 'react';
 import '../App.css';
-import { NavLink, Link } from 'react-router-dom';
-import {Navbar,Modal,Button,Row,Col, Form,ButtonGroup, Alert,ToggleButton, ToggleButtonGroup, CardGroup} from 'react-bootstrap';
-import {Card} from 'react-bootstrap';
-import MyPic from '../assets/MyPic.jpg'
+
+import {Card,Button} from 'react-bootstrap';
+
+
 //use fontawesome
 import FontAwesome from 'react-fontawesome'
 //import faStyles from 'font-awesome/css/font-awesome.css'
-import Navigation from './Navigation'
-import Header from './Header'
+
 import $ from "jquery";
 
 
@@ -25,7 +24,7 @@ const  ProjectDetails = () => {
 
    
     const project = [
-        {image:{MyPic},title: "My Portfolio",desc: 'One Page React App', tech: ['AWS S3','React','Bootstrap','CSS'],github:'https://github.com/kpacheco84/MyPortfolioWebPage.git',run:'https://kpacheco84.github.io/MyPortfolioWebPage/.'}
+        {image:'',title: "My Portfolio",desc: 'One Page React App', tech: ['AWS S3','React','Bootstrap','CSS'],github:'https://github.com/kpacheco84/MyPortfolioWebPage.git',run:'https://kpacheco84.github.io/MyPortfolioWebPage/.'}
 
     ];
     

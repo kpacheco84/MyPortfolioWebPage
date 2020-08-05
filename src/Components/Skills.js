@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import '../App.css';
-import { Container, Navbar,Nav,Card,Button, ListGroup} from 'react-bootstrap';
+import {Card} from 'react-bootstrap';
 import FontAwesome from 'react-fontawesome'
-import headerImg from '../assets/farzad-nazifi-p-xSl33Wxyc-unsplash.jpg'
+
 
 
 const  Skills = () => {
@@ -25,7 +25,7 @@ const  Skills = () => {
       
         return(
             <div className ='p-3' id = 'skills'>
-        <Card  style={{ width: '18rem',height:'400px'}} key = {index} imgsrc = {card.image}>
+        <Card  style={{ width: '18rem',height:'400px', padding:'20px'}} key = {index} imgsrc = {card.image}>
         <Card.Header style = {{backgroundColor:'#0EE5C4',height:'100px'}}>
         <FontAwesome
         className="super-crazy-colors"
@@ -59,7 +59,7 @@ const  Skills = () => {
             
         <div style={{textAlign:'center',paddingTop:'30px'}}>
             <h1 style={{paddingTop:'40px', textAlign:'center'}}>Skills</h1>
-            <div className = 'row' style={{paddingLeft: '15%',marginTop:'80px', paddingRight:'15%'}}>
+            <div className = 'row' style={{justifyContent:'center',paddingLeft: '5%',marginTop:'80px', paddingRight:'5%', paddingBottom:'50px'}}>
                       
                         {skills.map(renderCard)}
                         

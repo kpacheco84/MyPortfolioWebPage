@@ -16,6 +16,10 @@ import Education from './Components/Education';
 import Skills from './Components/Skills';
 import Experience from './Components/Experience';
 import ProjectPicsModal from './Components/ProjectPicsModal.js';
+
+
+
+/*dont use container with image maybe use image in div*/
 /* Make each section needed*/
 //
 //as you scroll down to each section fade up from the bottom the title of each section. jquery commented out below. not sure where to place it
@@ -27,6 +31,8 @@ import ProjectPicsModal from './Components/ProjectPicsModal.js';
 //Properly classify each skill and desciptions
 //enlarge icons you hover over
 import $ from "jquery";
+
+require('intersection-observer');
 
 
 
@@ -40,7 +46,7 @@ export class App extends React.Component{
     let zigzag1 = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ff5500" fill-opacity="1" d="M0,192L288,128L576,192L864,288L1152,160L1440,64L1440,320L1152,320L864,320L576,320L288,320L0,320Z"></path></svg>`;
   
     $(document).ready(function() {
-      alert("document ready occurred!");
+     // alert("document ready occurred!");
       
     // Function which adds the 'animated' class to any '.animatable' in view
     var doAnimations = function() {
@@ -69,48 +75,86 @@ export class App extends React.Component{
     $(window).trigger('scroll');
   
   });
+
+ //Change navigation style on scroll
+ window.addEventListener('scroll', event => { 
+  let nav = document.querySelector('.nav'); 
+  console.log(nav)
+  //(window.scrollY >= 44) ? nav.className.add('scroll') : nav.className.remove('scroll');
+});
+
+//Active navigation on scroll
+window.addEventListener('scroll', event => {
+let navigationLinks = document.querySelectorAll('nav ul li a nav-link data-rb-event-key');
+let fromTop = window.scrollY;
+
+//console.log('')
+navigationLinks.forEach(link => {
+  let section = document.querySelector(link.hash);
+ console.log(section)
+  if (
+    section.offsetTop <= fromTop &&
+    section.offsetTop + section.offsetHeight > fromTop
+  ) {
+    console.log('meets specs')
+    link.classList.add('active');
+  } else {
+    link.classList.remove('active');
+    
+  }
+  
+});
+});
+
+
   return (
    <div>
      <Container fluid='true' id = 'home'>
      
-    <Navigation></Navigation>
+    <Navigation id='nav'></Navigation>
     
     <Header></Header>
-   
- <Container fluid='true' style={{height:'500px', backgroundSize: '50% 100%',backgroundImage:{zigzag1},
+   <div>
+ 
+    </div>
+ <Container fluid='true' style={{height:'relative',backgroundImage:{zigzag1},
 backgroundColor:'white',backgroundRepeat: 'no-repeat',width:'100%'
-, margin:'0px 100px 0px 0px'}}>
+, margin:'0px 100px 0px 0px'}}
+
+>
       <AboutMe></AboutMe>
       
 </Container>
      
-      <Container id = 'projects' fluid='true' style={{height:'800px',backgroundSize: '100%',
+      <Container id = 'projects' fluid='true' style={{height:'relative',backgroundSize: '100%',
 backgroundColor:'#ffcccc',backgroundRepeat: 'no-repeat',width:'100%'
-, margin:'0px 100px 0px 0px'}}>
+, margin:'0px 100px 0px 0px'}}
+>
   <Projects></Projects>
     </Container>
-    <Container id = 'skills' fluid='true' style={{height:'700px',backgroundSize: '50% 100%',
+    <Container id = 'skills' fluid='true' style={{height:'relative',backgroundSize: '50% 100%',
 backgroundColor:'white',backgroundRepeat: 'no-repeat',width:'100%'
-, margin:'0px 100px 0px 0px'}}>
+, margin:'0px 100px 0px 0px'}}
+onScroll={()=>{console.log('im focused')}}
+>
    <Skills></Skills>
    </Container>
-   <Container id ='experience' fluid='true' style={{height:'900px', width:'auto',backgroundSize: '100%',
+
+   <Container id ='experience' fluid='true' style={{height:'relative', width:'auto',backgroundSize: '100%',
 backgroundColor:'#ccffff',backgroundRepeat: 'no-repeat',width:'100%'
-, margin:'0px 100px 0px 0px'}}>
+, margin:'0px 100px 0px 0px'}}
+onScroll={()=>{console.log('im focused')}}>
     <Experience></Experience>
     </Container>
-    <Container id = 'education' fluid='true' style={{height:'700px',backgroundSize: '50% 100%',
+
+    <Container id = 'education' fluid='true' style={{height:'relative',backgroundSize: '50% 100%',
 backgroundColor:'white',backgroundRepeat: 'no-repeat',width:'100%'
-, margin:'0px 100px 0px 0px'}}>
+, margin:'0px 100px 0px 30px'}}>
      <Education></Education>
      
      </Container>
 
-     <Container id = 'pics' fluid='true' style={{height:'700px',backgroundSize: '50% 100%',
-backgroundColor:'white',backgroundRepeat: 'no-repeat',width:'100%'
-, margin:'0px 100px 0px 0px'}}>
-     <ProjectPicsModal>hello</ProjectPicsModal>
-     </Container>
+
      
     <Footer></Footer>
    

@@ -60,6 +60,17 @@ text-align: 'center';
     background-color: #0EE5C4;
   }
 
+  .coral.nav-link:focus {
+    background-color: #0EE5C4;
+  }
+
+  /* Make navigation link active when scrolled section
+
+  /** active navigation **/
+.nav-container.scroll a.active {
+  color: #000;
+  border-bottom: 2px solid #000;
+}
 /*Card*/
 
 /*card footer icons*/
@@ -122,7 +133,9 @@ text-align: 'center';
 
 .w3-animate-left{
 
-  position:relative;animation:animateleft 0.90s}
+  position:relative;
+  animation-delay: 20s;
+  animation:animateleft 0.90s}
   @keyframes animateleft{from{left:-300px;opacity:0} 
   to{left:0;opacity:1};
   

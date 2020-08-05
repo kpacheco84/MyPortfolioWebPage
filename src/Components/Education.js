@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import '../App.css';
-import { Container, Navbar,Nav, Card, CardImg} from 'react-bootstrap';
-import FontAwesome from 'react-fontawesome'
-import headerImg from '../assets/farzad-nazifi-p-xSl33Wxyc-unsplash.jpg';
+import {  Card, CardImg} from 'react-bootstrap';
+
 
 import fiu from '../assets/FIU-Panther.png';
 import team from '../assets/team-treehouse.png'
@@ -26,7 +25,7 @@ const  Education = () => {
       
         return(
             <div className ='col-md-4' >
-        <Card  style={{ width: '30rem',height:'400px',marginTop:'20px'}} key = {index} imgsrc = {card.image}>
+        <Card  style={{ width: '25rem',height:'430px',marginTop:'20px', marginBottom:'50px'}} key = {index} imgsrc = {card.image}>
         <Card.Header style = {{backgroundColor:'#0EE5C4',height:'50px'}}></Card.Header>
       <Card.Body>
         <Card.Title style={{paddingBottom:'10px'}}>{card.school} </Card.Title>
@@ -51,7 +50,7 @@ const  Education = () => {
          <br></br> 
       
             <h1 style={{paddingTop:'20px', textAlign:'center'}}>Education</h1>
-                    <div className = 'row' style={{paddingLeft: '10%',paddingTop:'20px', paddingRight:'15%'}}>
+                    <div className = 'row' style={{justifyContent:'center',paddingLeft: '5%',marginTop:'80px', paddingRight:'5%', paddingBottom:'60px'}}>
                      {edu.map(renderCard)}
                         
         </div>

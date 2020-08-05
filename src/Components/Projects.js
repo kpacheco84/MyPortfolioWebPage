@@ -1,26 +1,27 @@
 import React, {Component} from 'react';
 import '../App.css';
-import { NavLink, Link } from 'react-router-dom';
-import {Navbar,Modal,Button,Row,Col, Form,ButtonGroup, Alert,ToggleButton, ToggleButtonGroup, CardGroup, CardImg} from 'react-bootstrap';
-import {Card} from 'react-bootstrap';
-import MyPic from '../assets/MyPic.jpg'
+
+import {Card, CardImg, Container, Row, Col} from 'react-bootstrap';
+
+
 //use fontawesome
 import FontAwesome from 'react-fontawesome'
-//import faStyles from 'font-awesome/css/font-awesome.css'
-import Navigation from './Navigation'
-import Header from './Header'
+
 import $ from "jquery";
-//<Navigation></Navigation>
+
 //import images
-import fiu from '../assets/FIU-Panther.png'
+
 import phrase from '../assets/phrasehunter.png'
 import portfolio from '../assets/portfolio.png'
 import empAPI from '../assets/empAPI.png'
 
+/* add to projects the Interactive registration form
+  add the amplify notetaker showing aws cognito login and registration capability
+  finish the marketplace app*/
 
 
 const  Projects = () => {
-
+//this icon transition not working 
   $(document).ready(function(){
     $('.scale').hover(function() {
       console.log('moused over')
@@ -48,7 +49,7 @@ const  Projects = () => {
       
         return(
             <div className ='col-md-4'  >
-        <Card  style={{ width: '25rem',height:'550px',padding:'0px'}} key = {index} >
+        <Card  style={{ width: '25rem',height:'550px',margin:'20px'}} key = {index} >
         <CardImg src={card.image} style={{height:'200px', width:'100%'}}></CardImg>
       <Card.Body>
         <Card.Title style={{paddingBottom:'10px'}}>{card.title}</Card.Title>
@@ -66,7 +67,7 @@ const  Projects = () => {
         onClick= {()=>{alert('ShowModal')}}>Description</Button>*/}
       </Card.Body>
       <Card.Footer  style = {{backgroundColor:'#ff4d4d',height:'100px'}} >
-      <a href={card.github} target="_blank">
+      
       
       <a href={card.run} target="_blank"><FontAwesome
         className="super-crazy-colors slow-spin"
@@ -77,14 +78,6 @@ const  Projects = () => {
         style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)',color:'white',padding:'20px' }}/></a>
         
         <a href={card.github} target="_blank">
-        <FontAwesome
-        className="super-crazy-colors slow-spin icon"
-        name="film"
-        //cssModule={faStyles}
-        size="2x"
-        spin
-        style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)',color:'white',padding:'20px' }}/>
-          </a>
       <FontAwesome className="super-crazy-colors slow-spin icon"
        
         name="github"
@@ -93,6 +86,15 @@ const  Projects = () => {
         style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)',color:'white',padding:'20px' }}/>
        </a>
        
+        <FontAwesome
+        onClick={()=>alert('Picture Slide Show Coming Soon!')}
+        className="super-crazy-colors slow-spin icon"
+        name="film"
+        //cssModule={faStyles}
+        size="2x"
+        spin
+        style={{ textShadow: '0 1px 0 rgba(0, 0, 0, 0.1)',color:'white',padding:'20px' }}/>
+          
      
         </Card.Footer>
     </Card>
@@ -108,16 +110,15 @@ const  Projects = () => {
 
         return (
             
-          <div style={{textAlign:'center',paddingTop:'30px'}}>
-            
+          <div style={{textAlign:'center',paddingTop:'30px', paddingBottom:'50px'}}>
+           
           <h1 className= 'animatable' style={{paddingTop:'40px', textAlign:'center'}}>Projects</h1>
-          <div className = 'row' style={{paddingLeft: '15%',marginTop:'80px', paddingRight:'15%'}}>
+         
+          <div className = 'row' style={{justifyContent:'center',paddingLeft: '5%',marginTop:'80px', paddingRight:'5%'}}>
       
                         {projects.map(renderCard)}
                         
-                            </div>
-
-                         
+                            </div>                   
         </div>
          
       
