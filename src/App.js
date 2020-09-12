@@ -16,7 +16,7 @@ import Education from "./Components/Education";
 import Skills from "./Components/Skills";
 import Experience from "./Components/Experience";
 import ProjectPicsModal from "./Components/ProjectPicsModal.js";
-import Reveal from "react-reveal/Reveal";
+import { Reveal, Fade, Rotate } from "react-reveal";
 
 /*dont use container with image maybe use image in div*/
 /* Make each section needed*/
@@ -47,13 +47,10 @@ export class App extends React.Component {
 
       console.log(homeLink);
 
-      //console.log('')
       navigationLinks.forEach((link) => {
         let section = document.querySelector(link.dataset.section);
 
         let sectionHeight = section.offsetHeight;
-
-        //
 
         if (
           section.offsetTop - navbarHeight <= scrollPosition &&

@@ -1,16 +1,16 @@
 import React from "react";
 import "../App.css";
 import { Card } from "react-bootstrap";
-
+import { Reveal, Fade, Rotate } from "react-reveal";
 const Experience = () => {
   const exp = [
-    {
+    /*{
       image: "",
       company: "Reflections Electronics Pro, LLC",
       title: "Web & Software Developer (contractor)",
       dates: "November 2019 - Present",
       resp: [""],
-    },
+    },*/
     {
       image: "",
       company: "Femwell Group Health, LLC",
@@ -81,22 +81,24 @@ const Experience = () => {
   };
   return (
     <div>
-      <br></br>
-      <br></br>
+      <Rotate bottom left cascade>
+        <br></br>
+        <br></br>
 
-      <h1 style={{ paddingTop: "20px", textAlign: "center" }}>Experience</h1>
-      <div
-        className="row"
-        style={{
-          justifyContent: "center",
-          paddingLeft: "5%",
-          marginTop: "80px",
-          paddingRight: "5%",
-          paddingBottom: "50px",
-        }}
-      >
-        {exp.map(renderCard)}
-      </div>
+        <h1 style={{ paddingTop: "20px", textAlign: "center" }}>Experience</h1>
+        <div
+          className="row"
+          style={{
+            justifyContent: "center",
+            paddingLeft: "5%",
+            marginTop: "80px",
+            paddingRight: "5%",
+            paddingBottom: "50px",
+          }}
+        >
+          {exp.map(renderCard)}
+        </div>
+      </Rotate>
     </div>
   );
 };

@@ -2,28 +2,36 @@ import React from "react";
 import "../App.css";
 import { Card } from "react-bootstrap";
 import FontAwesome from "react-fontawesome";
+import { Reveal, Fade, Rotate, Flip } from "react-reveal";
 
 const Skills = () => {
   const skills = [
     {
       image: "database",
       title: "Database & Query Languages",
-      tech: ["SQL", "PostgresSQL", "MySQL", "DynamoDB"],
+      tech: ["SQL", "PostgreSQL", "MySQL", "DynamoDB", "Mongo DB"],
     },
     {
       image: "code",
       title: "Programming Languages & Frameworks",
-      tech: ["React", "Bootstrap", "JQuery", "Javascript"],
+      tech: ["React", "Bootstrap", "JQuery", "Javascript", "Node", "Express"],
     },
     {
       image: "globe",
       title: "Collaboration Tools",
-      tech: ["Jira", "Asana", "Slack", "Github"],
+      tech: ["Jira", "Asana", "Slack", "Github", "Git"],
     },
     {
       image: "rocket",
       title: "Deployment Tools",
-      tech: ["AWS S3", "AWS EC2", "AWS RDS", "AWS Amplify", "GitHub Pages"],
+      tech: [
+        "AWS S3",
+        "AWS EC2",
+        "AWS RDS",
+        "AWS Amplify",
+        "GitHub Pages",
+        "Heroku",
+      ],
     },
   ];
 
@@ -53,11 +61,17 @@ const Skills = () => {
               {card.title}
             </Card.Title>
             <Card.Text>
-              <ul className="column2box flush" style={{ padding: "0px" }}>
+              <ul
+                className="column2box flush"
+                style={{ padding: "0px", listStyleType: "none" }}
+              >
                 {" "}
                 {card.tech.map((tech) => (
                   <li
-                    style={{ align: "left", textAlign: "left" }}
+                    style={{
+                      align: "left",
+                      textAlign: "left",
+                    }}
                     key={index}
                     name="employeeRow"
                     id="empRow"
@@ -74,7 +88,9 @@ const Skills = () => {
   };
   return (
     <div style={{ textAlign: "center", paddingTop: "30px" }}>
-      <h1 style={{ paddingTop: "40px", textAlign: "center" }}>Skills</h1>
+      <Flip top>
+        <h1 style={{ paddingTop: "40px", textAlign: "center" }}>Skills</h1>
+      </Flip>
       <div
         className="row"
         style={{
@@ -83,7 +99,9 @@ const Skills = () => {
           paddingBottom: "50px",
         }}
       >
-        {skills.map(renderCard)}
+        <Flip top cascade>
+          {skills.map(renderCard)}
+        </Flip>
       </div>
     </div>
   );

@@ -56,7 +56,7 @@ const Footer = () => {
               }}
             />
           </a>
-          <h1
+          <label
             style={{
               fontWeight: "50",
               fontStyle: "italic",
@@ -65,8 +65,19 @@ const Footer = () => {
               textAlign: "right",
             }}
           >
+            <FontAwesome
+              className="super-crazy-colors "
+              name="copyright"
+              size="1x"
+              style={{
+                textShadow: "0 1px 0 rgba(0, 0, 0, 0.1)",
+                color: "white",
+                padding: "10px",
+                textAlign: "right",
+              }}
+            />
             Katherine Pacheco 2020
-          </h1>
+          </label>
         </Container>
       </Navbar>
     </div>

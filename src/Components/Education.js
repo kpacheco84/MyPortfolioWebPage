@@ -4,6 +4,7 @@ import { Card, CardImg } from "react-bootstrap";
 
 import fiu from "../assets/FIU-Panther.png";
 import team from "../assets/team-treehouse.png";
+import { Reveal, Fade, Rotate } from "react-reveal";
 
 const Education = () => {
   const edu = [
@@ -71,22 +72,24 @@ const Education = () => {
   };
   return (
     <div>
-      <br></br>
-      <br></br>
+      <Rotate bottom right cascade>
+        <br></br>
+        <br></br>
 
-      <h1 style={{ paddingTop: "20px", textAlign: "center" }}>Education</h1>
-      <div
-        className="row"
-        style={{
-          justifyContent: "center",
-          paddingLeft: "5%",
-          marginTop: "100px",
-          paddingRight: "5%",
-          paddingBottom: "150px",
-        }}
-      >
-        {edu.map(renderCard)}
-      </div>
+        <h1 style={{ paddingTop: "20px", textAlign: "center" }}>Education</h1>
+        <div
+          className="row"
+          style={{
+            justifyContent: "center",
+            paddingLeft: "5%",
+            marginTop: "100px",
+            paddingRight: "5%",
+            paddingBottom: "150px",
+          }}
+        >
+          {edu.map(renderCard)}
+        </div>
+      </Rotate>
     </div>
   );
 };

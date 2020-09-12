@@ -15,7 +15,8 @@ import portfolio from "../assets/portfolio.png";
 import empAPI from "../assets/empAPI.png";
 import AmplifyNotes from "../assets/AmplifyNotes.PNG";
 import InteractiveForm from "../assets/InteractiveForm.PNG";
-import Reveal from "react-reveal/Reveal";
+import shoppingCart from "../assets/shoppingCart.png";
+import { Flip, Fade } from "react-reveal";
 
 /* add to projects the Interactive registration form
   add the amplify notetaker showing aws cognito login and registration capability
@@ -47,19 +48,19 @@ const Projects = () => {
     },
 
     {
-      image: "",
+      image: shoppingCart,
       title: "E-Commerce Shopping Cart",
       desc: "MERN Application",
       tech: [
         "AWS S3",
-        "React-Reveal",
         "MongoDB Atlas",
         "Express",
         "React",
         "Node",
+        "React-Reveal",
       ],
-      github: "https://github.com/kpacheco84/MyPortfolioWebPage.git",
-      run: "https://dev.dy1wlhyxpzb5j.amplifyapp.com",
+      github: "https://github.com/kpacheco84/react-shopping-cart.git",
+      run: "https://react-shopping-cart-kp.herokuapp.com/",
       pics: "",
     },
     {
@@ -80,7 +81,7 @@ const Projects = () => {
       github: "https://github.com/kpacheco84/3-Interactive-Form.git",
       run: "https://kpacheco84.github.io/3-Interactive-Form/",
       pics: "",
-    },
+    } /*,
     {
       image: "",
       title: "D3.js Examples",
@@ -90,7 +91,7 @@ const Projects = () => {
       github: "https://github.com/kpacheco84/MyPortfolioWebPage.git",
       run: "https://dev.dy1wlhyxpzb5j.amplifyapp.com",
       pics: "",
-    },
+    }*/,
     {
       image: AmplifyNotes,
       title: "Amplify Note Taker",
@@ -205,9 +206,9 @@ const Projects = () => {
     <div
       style={{ textAlign: "center", paddingTop: "30px", paddingBottom: "50px" }}
     >
-      <Reveal effect="fadeInUp" effectOut="fadeOutLeft" cascade>
+      <Fade up>
         <h1 style={{ paddingTop: "40px", textAlign: "center" }}>Projects</h1>
-      </Reveal>
+      </Fade>
 
       <div
         className="row"
@@ -218,7 +219,7 @@ const Projects = () => {
           paddingRight: "5%",
         }}
       >
-        {projects.map(renderCard)}
+        <Flip left>{projects.map(renderCard)}</Flip>
       </div>
     </div>
   );
