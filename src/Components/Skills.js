@@ -23,7 +23,7 @@ const Skills = () => {
     },
     {
       image: "rocket",
-      title: "Deployment Tools",
+      title: "Cloud Tech  & Deployment Tools",
       tech: [
         "AWS S3",
         "AWS EC2",
@@ -88,7 +88,7 @@ const Skills = () => {
   };
   return (
     <div style={{ textAlign: "center", paddingTop: "30px" }}>
-      <Flip top>
+      <Flip top delay={1000}>
         <h1 style={{ paddingTop: "40px", textAlign: "center" }}>Skills</h1>
       </Flip>
       <div
@@ -99,7 +99,7 @@ const Skills = () => {
           paddingBottom: "50px",
         }}
       >
-        <Flip top cascade>
+        <Flip top cascade delay={1000}>
           {skills.map(renderCard)}
         </Flip>
       </div>

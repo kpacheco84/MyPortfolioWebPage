@@ -206,7 +206,7 @@ const Projects = () => {
     <div
       style={{ textAlign: "center", paddingTop: "30px", paddingBottom: "50px" }}
     >
-      <Fade up>
+      <Fade up delay={500}>
         <h1 style={{ paddingTop: "40px", textAlign: "center" }}>Projects</h1>
       </Fade>
 
@@ -219,7 +219,9 @@ const Projects = () => {
           paddingRight: "5%",
         }}
       >
-        <Flip left>{projects.map(renderCard)}</Flip>
+        <Flip left delay={500}>
+          {projects.map(renderCard)}
+        </Flip>
       </div>
     </div>
   );

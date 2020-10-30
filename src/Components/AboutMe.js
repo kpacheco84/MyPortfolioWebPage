@@ -33,14 +33,16 @@ const AboutMe = () => {
             I graduated with my Bachelors's in Management Information Systems in
             2013. I've had to wear many hats throughout my career; from Business
             Analyst, Database Programmer, BI Developer, Application Developer,
-            Reporting Analyst, Software/ Web Developer and much more. I feel
+            Reporting Analyst, Software Developer and much more. I feel
             this has made me a well-rounded asset in the Tech Industry in that I
-            have great coding skills but know how to gather and understand
+            have great coding skills AND know how to gather and understand
             business requirements in order to code the best solutions possible.
-            My career trajectory has led me to ultimately become a FullStack
-            Software Developer. I hope to continue to grow and polish my current
-            skills and gain new skills as I embark on the best years of my
-            Career Development.
+            My career trajectory has led me to ultimately become a 
+            well-rounded FullStack Software Developer. 
+            I am constantly growing my skills as I do consider 
+            myself a lifelong learner. 
+            I have a passion for developing Software and Applications that provide effective, 
+            efficient and priceless business solutions. 
           </p>
         </section>
       </div>

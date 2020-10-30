@@ -14,7 +14,7 @@ const Experience = () => {
     {
       image: "",
       company: "Femwell Group Health, LLC",
-      title: "Business Intelligence Developer",
+      title: "Business Intelligence & Application Developer",
       dates: "November 2015 - Present",
       resp: [""],
     },
@@ -81,7 +81,7 @@ const Experience = () => {
   };
   return (
     <div>
-      <Rotate bottom left cascade>
+      <Rotate bottom left cascade delay={800}>
         <br></br>
         <br></br>
 
