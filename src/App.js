@@ -96,7 +96,7 @@ export class App extends React.Component {
               width: "100%",
               margin: "0px 100px 0px 0px",
             }}
-          >
+          ><h1>see project pics</h1>
             <Projects></Projects>
           </Container>
           <Container
@@ -149,6 +149,20 @@ export class App extends React.Component {
             }}
           >
             <Education></Education>
+          </Container>
+          <Container
+            id="projectpics"
+            fluid="true"
+            style={{
+              height: "relative",
+              backgroundSize: "50% 100%",
+              backgroundColor: "white",
+              backgroundRepeat: "no-repeat",
+              width: "100%",
+              margin: "0px 100px 0px 30px",
+            }}
+          >
+            <ProjectPicsModal></ProjectPicsModal>
           </Container>
 
           <Footer></Footer>

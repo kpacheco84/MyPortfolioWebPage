@@ -4,13 +4,13 @@ import { Card } from "react-bootstrap";
 import { Reveal, Fade, Rotate } from "react-reveal";
 const Experience = () => {
   const exp = [
-    /*{
+    {
       image: "",
       company: "Reflections Electronics Pro, LLC",
-      title: "Web & Software Developer (contractor)",
-      dates: "November 2019 - Present",
+      title: "Fullstack Software Developer (contractor/freelance)",
+      dates:"September 2020 - December 2020",
       resp: [""],
-    },*/
+    },
     {
       image: "",
       company: "Femwell Group Health, LLC",
@@ -34,18 +34,12 @@ const Experience = () => {
     },
     {
       image: "",
-      company: "Reflections Elctroncis Pro, LLC",
+      company: "Reflections Electroncis Pro, LLC",
       title: "Office Manager and Application Developer",
       dates: "January 2008 - December 2011",
       resp: [""],
     },
-    {
-      image: "",
-      company: "United States Medical Supply, LLC",
-      title: "Customer Service Supervisor",
-      dates: "July 2006 - January 2008",
-      resp: [""],
-    },
+    
     //{image:"./images/MyPic.jpg",title: "Dynamic Registration Form", desc: 'Basic Register Form',tech: ['React','Bootstrap','CSS']}
   ];
 
