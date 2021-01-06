@@ -8,7 +8,7 @@ const Experience = () => {
       image: "",
       company: "Reflections Electronics Pro, LLC",
       title: "Fullstack Software Developer (contractor/freelance)",
-      dates:"September 2020 - December 2020",
+      dates:"September 2020 - January 2021",
       resp: [""],
     },
     {

@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import "../App.css";
 
 import { Card, CardImg,Modal, Carousel } from "react-bootstrap";
@@ -50,10 +50,10 @@ const Projects = () => {
     );
   });
 
-  let showCarousel = false;
+  const [showCarousel, setShowCarousel] = useState(false);
   const handleShowCarousel = ()=>{
 
-    showCarousel = false;
+    setShowCarousel(true);
   }
 
 
@@ -124,10 +124,8 @@ desc:' Employee can enter the details of the service order request.'
                   desc:'The Service Order Exit screen allows the employee to view service order detail and balance information to take payments.'
                   
                   },
-                 
-
-
-  ]
+  
+  ];
 
   const projects = [
 
@@ -244,7 +242,9 @@ desc:' Employee can enter the details of the service order request.'
   ];
 
   const renderCard = (card, index) => {
+    console.log(card);
     return (
+    
       <div className="col-md-4">
         <Card
           style={{ width: "25rem", height: "550px", margin: "20px" }}
@@ -273,10 +273,27 @@ desc:' Employee can enter the details of the service order request.'
                 ))}
               </ul>
             </Card.Text>
-            {/*}<Button style={{backgroundColor:'#ff4d4d',border:'0px',marginTop:'20px'}} 
-        onClick= {()=>{alert('ShowModal')}}>Description</Button>*/}
+           
           </Card.Body>
           <Card.Footer style={{ backgroundColor: "#ff4d4d", height: "100px" }}>
+
+            {index === 0 ?
+             
+             <FontAwesome
+             disabled={card.run_flag}
+               className="super-crazy-colors slow-spin"
+               name="desktop"
+               //cssModule={faStyles}
+               size="2x"
+               spin
+               style={{
+                 textShadow: "0 1px 0 rgba(0, 0, 0, 0.1)",
+                 color:  "gray" ,
+                 padding: "20px",
+               }}
+             />
+          
+            :
             <a href={card.run} target="_blank" rel="noreferrer">
               <FontAwesome
               disabled={card.run_flag}
@@ -287,30 +304,46 @@ desc:' Employee can enter the details of the service order request.'
                 spin
                 style={{
                   textShadow: "0 1px 0 rgba(0, 0, 0, 0.1)",
-                  color: card.run_flag === true ? "white" : 'gray',
+                  color:  "white",
                   padding: "20px",
                 }}
               />
             </a>
-
-            <a href={card.github} target="_blank" rel="noreferrer">
+              }
+            {index === 0 ?
               <FontAwesome
-              disabled={card.github_flag}
+           
+           className="super-crazy-colors slow-spin icon"
+           name="github"
+           size="2x"
+           spin
+           style={{
+             textShadow: "0 1px 0 rgba(0, 0, 0, 0.1)",
+             color : 'gray',
+             padding: "20px",
+           }}
+         />
+            :
+            <a href=  {card.github}  target="_blank" rel="noreferrer">
+              <FontAwesome
+           
                 className="super-crazy-colors slow-spin icon"
                 name="github"
                 size="2x"
                 spin
                 style={{
                   textShadow: "0 1px 0 rgba(0, 0, 0, 0.1)",
-                  color: card.github_flag === true ? "white" : 'gray',
+                  color: "white" ,
                   padding: "20px",
                 }}
               />
             </a>
-
+  }
+            <span onClick={index === 0 ? () => handleShowCarousel() : ()=> alert('none available')}
+            style={{cursor: index === 0 ?'pointer': 'default'}}
+            >
             <FontAwesome
-            disabled= {card.image === reflections ? false : true}
-              onClick={() => handleShowCarousel()}
+              
               className="super-crazy-colors slow-spin icon"
               name="film"
               //cssModule={faStyles}
@@ -318,16 +351,19 @@ desc:' Employee can enter the details of the service order request.'
               spin
               style={{
                 textShadow: "0 1px 0 rgba(0, 0, 0, 0.1)",
-                color: card.pics_flag === true ? "white" : 'gray',
+                color: card.pics_flag  ? "white" : 'gray',
                 padding: "20px",
               }}
             />
+        </span>
           </Card.Footer>
         </Card>
       </div>
     );
   };
 
+
+ 
   return (
     <div
       style={{ textAlign: "center", paddingTop: "30px", paddingBottom: "50px" }}
@@ -350,12 +386,15 @@ desc:' Employee can enter the details of the service order request.'
         </Flip>
 
 
-       <div   style={{position:'auto',overflowY:'auto',width:'fit-content'}}>
-          <Modal show = {showCarousel}
+       <div   >
+          <Modal closeButton ={true}
+          show = {showCarousel}
+           onHide = {()=>setShowCarousel(false)}
           
+           size='xl'
           >
           <Carousel
- style={{backgroundColor:'black'}}
+       
          >
            {carousel.map((carousel=>
           

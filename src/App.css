@@ -179,3 +179,20 @@ text-align: 'center';
 		transform: translateY(0);
 	}
 }
+
+
+/*carousal modal*/
+
+.modal-90w {
+
+  width: 1200px;
+  background-color: red;
+
+}
+
+
+.btnPlayIcons :active{
+
+  border: 'none';
+
+};

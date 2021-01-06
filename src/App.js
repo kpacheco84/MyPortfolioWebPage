@@ -96,7 +96,7 @@ export class App extends React.Component {
               width: "100%",
               margin: "0px 100px 0px 0px",
             }}
-          ><h1>see project pics</h1>
+          >
             <Projects></Projects>
           </Container>
           <Container
