@@ -133,7 +133,7 @@ desc:' Employee can enter the details of the service order request.'
       image: reflections,
       title: "Reflections Electronics Pro - Intranet",
       desc:"Internal Service Request Portal",
-      tech: ["AWS S3", "React", "Ant-Design", "React Hooks"],
+      tech: ["AWS S3", "AWS RDS PostgreSQL","React", "Ant-Design", "React Hooks"],
       github: "",
       run: "",
       pics: "test",
