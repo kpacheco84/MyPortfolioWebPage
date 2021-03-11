@@ -8,7 +8,7 @@ import Projects from "./Components/Projects";
 import "bootstrap/dist/css/bootstrap.min.css";
 //import bootstrap from 'bootstrap'
 import Navigation from "./Components/Navigation";
-import Header from "./Components/Header";
+import Home from "./Components/Home";
 import { Navbar, Container } from "react-bootstrap";
 import Footer from "./Components/Footer";
 import AboutMe from "./Components/AboutMe";
@@ -66,10 +66,17 @@ export class App extends React.Component {
 
     return (
       <div>
-        <Container fluid="true" id="home">
+        <Container fluid="true" style={{
+              height: "relative",
+
+              backgroundColor: "white",
+              backgroundRepeat: "no-repeat",
+              width: "100%",
+              margin: "0px 100px 0px 0px",
+            }} id="home">
           <Navigation id="nav"></Navigation>
 
-          <Header></Header>
+          <Home/>
           <div></div>
           <Container
             fluid="true"
@@ -148,23 +155,9 @@ export class App extends React.Component {
               margin: "0px 100px 0px 30px",
             }}
           >
-            <Education></Education>
+        <Education></Education>
           </Container>
-          <Container
-            id="projectpics"
-            fluid="true"
-            style={{
-              height: "relative",
-              backgroundSize: "50% 100%",
-              backgroundColor: "white",
-              backgroundRepeat: "no-repeat",
-              width: "100%",
-              margin: "0px 100px 0px 30px",
-            }}
-          >
-            <ProjectPicsModal></ProjectPicsModal>
-          </Container>
-
+         
           <Footer></Footer>
         </Container>
       </div>

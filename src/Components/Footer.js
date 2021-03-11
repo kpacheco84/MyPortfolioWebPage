@@ -10,9 +10,8 @@ const Footer = () => {
     <div>
       <Navbar
         className="navbar navbar-custom bg-primary"
-        bg="dark"
-        variant="dark"
-        fixed="bottom"
+        
+        //fixed="bottom"
       >
         <Container>
           <a href="https://www.linkedin.com/in/k-p-693183193" target="_blank">

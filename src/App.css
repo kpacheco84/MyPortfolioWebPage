@@ -1,10 +1,23 @@
+
+:root{
+  --coral: #fe1f4e;
+  --purple: #9b09c9;
+  --black: #0f0000;
+  --orange: #FF5500;
+  --blue: #0B1BF3;
+  --pink: #EC04C5;
+  --white:#F7F7F8;
+ 
+}
+
+
 .App {
   text-align: center;
 }
 
 
 body {
-  background-color: white;
+  background-color: var(--white);
   
   }
   
@@ -14,15 +27,110 @@ body {
 
   }
 
-  .wave{
-  background: 'green';
-color:white;
-text-align: 'center';
+
+
+  p{
+    text-indent:50px;
+  }
+
+
+  .navbar{
+    width:100%;
+    margin-right:5%;
+    color: var(--white);
+  }
+
+  .header{
+ 
+    background-image:url("assets/hero_1.jpg");
+    background-position: center;
+ display:flex;
+ justify-content: center;
+height:700px;
+width:auto;
+background-size: cover;
+background-color:var(--black);
+background-repeat: no-repeat;
+/*opacity: 85%;*/
+margin:50px 0px 0px 0px;
+
 
   }
 
+
+  .header_title{
+    display:block;
+    text-align: center;
+    margin:auto;
+    align-content: center;
+    width:100%;
+    color:var(--white)
+
+   
+  }
+
+  .header_title_first {
+    font-size: 30px;
+    color:var(--coral)
+  }
+  .header_title_second {
+    font-size: 30px;
+    color:purple
+  }
+
   
+  .btn_contact{
+    padding:15px;
+    margin:15px 20px 15px 20px;
+    color: var(--white);
+    background-color: var(--coral);
+    border: none;
+    border-radius: 3px;
+    border:3px solid var(--coral);
+    
+  }
+
+
+  .btn_contact:hover{
+    
+    color: var(--coral);
+    background-color: var(--white);
+
+    
+  }
+
+.aboutme{
+  margin: 50px 100px 20px 50px;
+ 
+  display:block;
+ 
+ 
+}
+
+.aboutme_content{
+  display: flex;
   
+  justify-content: center;
+  text-align: center;
+
+}
+
+.aboutme_box{
+background-color: var(--black);
+width:80%;
+height: 70%;
+border-radius: 20px;
+padding:2%;
+
+/* offset-x | offset-y | blur-radius | color */
+box-shadow: 8px 5px 9px var(--orange);
+color: var(--white);
+
+}
+
+
+
+
   .card {
   
     width:20rem;
@@ -51,26 +159,80 @@ text-align: 'center';
   .headerImg {
     height: 500px;
   }
+  
+  .myHeroTitle{
+    padding-right:30px;
+  }
+  
+
 /*navbar styling*/
   /* change the background color */
-  a.coral.nav-link.active {
-    background-color: #ff8080;
-  }
-  .coral.nav-link:hover {
-    background-color: #0EE5C4;
+.navbar{
+  background-color: var(--black);
+  
+  
+}
+
+  .nav{
+    display: flex;
+    justify-content: flex-end;
+    width:100%;
+
+    
   }
 
-  .coral.nav-link:focus {
-    background-color: #0EE5C4;
+  
+  .nav-menu-items{
+    width:100%;
+    
+    
+  }
+
+  @media only screen and (max-width:960px){
+    .nav-menu-items{
+      width:100%;
+       margin-top:40%;
+       position:absolute;
+       justify-content:right;
+      text-align:center;
+      background-color: var(--black);
+    }
+  }
+
+  .nav-link{
+    color:var(--white);
+    
+  }
+
+  .navlink{
+    color:var(--white)
+  }
+ 
+  a.navlink.nav-link.active {
+   
+    text-decoration: underline solid var(--coral) 3px;
+    background-color: var(--black);
+    color:var(--white)
+    
+  }
+  .navlink.nav-link:hover {
+    text-decoration: underline solid var(--coral) 3px;
+    background-color: var(--black);
+    color:var(--white)
+  }
+
+  .navlink.nav-link:focus {
+   color:var(--coral);
+
   }
 
   /* Make navigation link active when scrolled section
 
   /** active navigation **/
-.nav-container.scroll a.active {
-  color: #000;
+/*.nav-container.scroll a.active {
+  color: var(--black);
   border-bottom: 2px solid #000;
-}
+}*/
 /*Card*/
 
 /*card footer icons*/
@@ -85,100 +247,8 @@ text-align: 'center';
 
 }
 
-.slow-spin {
-  -webkit-animation: fa-spin 5s infinite linear;
-  animation: fa-spin 5s infinite linear;
-}
-
-.column2box {
-  columns: 2 auto;
-}
-
-/*enlarge icon on mouse over*/
-/*not working do i need to import anything>*/
-.transition {
-  -webkit-transform: scale(1.6); 
-  -moz-transform: scale(1.6);
-  -o-transform: scale(1.6);
-  transform: scale(1.6);
-}
-.scale {
--webkit-transition: all .4s ease-in-out;
--moz-transition: all .4s ease-in-out;
--o-transition: all .4s ease-in-out;
--ms-transition: all .4s ease-in-out;
-}
-
-.scale {
-  width:80px;
-  margin:25px;
-}
 
 
-
-.h1Header { 
-  animation: fadeInAnimation ease 3s; 
-  animation-iteration-count: 1; 
-  animation-fill-mode: forwards; 
-} 
-
-@keyframes fadeInAnimation { 
-  0% { 
-      opacity: 0; 
-  } 
-  100% { 
-      opacity: 1; 
-   } 
-} 
-
-.w3-animate-left{
-
-  position:relative;
-  animation-delay: 20s;
-  animation:animateleft 0.90s}
-  @keyframes animateleft{from{left:-300px;opacity:0} 
-  to{left:0;opacity:1};
-  
-}
-
-
-.animatable {
-  
-  /* initially hide animatable objects */
-  visibility: hidden;
-  
-  /* initially pause animatable objects their animations */
-  -webkit-animation-play-state: paused;   
-  -moz-animation-play-state: paused;     
-  -ms-animation-play-state: paused;
-  -o-animation-play-state: paused;   
-  animation-play-state: paused; 
-}
-
-
-@-o-keyframes fadeInUp {
-	0% {
-		opacity: 0;
-		-o-transform: translateY(20px);
-	}
-
-	100% {
-		opacity: 1;
-		-o-transform: translateY(0);
-	}
-}
-
-@keyframes fadeInUp {
-	0% {
-		opacity: 0;
-		transform: translateY(20px);
-	}
-
-	100% {
-		opacity: 1;
-		transform: translateY(0);
-	}
-}
 
 
 /*carousal modal*/
@@ -196,3 +266,9 @@ text-align: 'center';
   border: 'none';
 
 };
+
+
+/* icons*/
+.icon_menu{
+ color:var(--coral)
+}

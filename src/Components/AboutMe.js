@@ -1,23 +1,27 @@
 import React, { Component } from "react";
 import "../App.css";
+
+import { Container, Row, Col} from 'react-bootstrap';
 import { Reveal, Fade, Rotate } from "react-reveal";
+
+
+import FontAwesome from "react-fontawesome";
 
 //, in section style
 
 const AboutMe = () => {
   return (
+        <div id="aboutme" className="aboutme">
+        <div>
+        <h2 style={{ padding: '60px 0px 20px 145px', textAlign: "left" }}>About Me</h2>
+        </div>
+    <div  className='aboutme_content'>
+      <div className='aboutme_box'>
     <Fade bottom cascade>
-      <div id="aboutme">
-        <h1 style={{ paddingTop: "60px", textAlign: "center" }}>About Me</h1>
-        <br></br>
-        <section
-          style={{
-            paddingBottom: "50px",
-            paddingLeft: "25%",
-            paddingRight: "25%",
-          }}
-        >
-          <p style={{ textIndent: "50px" }}>
+      
+      <div >
+       <section>
+          <p>
             {" "}
             My love for programming and everything data began as a Customer
             Service Supervisor when I was involved in the Business Requirements
@@ -29,7 +33,7 @@ const AboutMe = () => {
             was the beginning trend of every small to major corporation.
           </p>
           <br></br>
-          <p style={{ textIndent: "50px" }}>
+          <p >
             I graduated with my Bachelors's in Management Information Systems in
             2013. I've had to wear many hats throughout my career; from Business
             Analyst, Database Programmer, BI Developer, Application Developer,
@@ -47,6 +51,9 @@ const AboutMe = () => {
         </section>
       </div>
     </Fade>
+    </div>
+    </div>
+    </div>
   );
 };
 
