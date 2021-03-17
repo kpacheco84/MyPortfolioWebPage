@@ -66,57 +66,29 @@ export class App extends React.Component {
 
     return (
       <div>
-        <Container fluid="true" style={{
-              height: "relative",
-
-              backgroundColor: "white",
-              backgroundRepeat: "no-repeat",
-              width: "100%",
-              margin: "0px 100px 0px 0px",
-            }} id="home">
+        <Container fluid="true"  id="home">
           <Navigation id="nav"></Navigation>
 
           <Home/>
           <div></div>
-          <Container
-            fluid="true"
-            style={{
-              height: "relative",
-
-              backgroundColor: "white",
-              backgroundRepeat: "no-repeat",
-              width: "100%",
-              margin: "0px 100px 0px 0px",
-            }}
-          >
-            <AboutMe></AboutMe>
-          </Container>
-
+          
           <Container
             id="projects"
             fluid="true"
-            style={{
-              height: "relative",
-              backgroundSize: "100%",
-              backgroundColor: "#ffcccc",
-              backgroundRepeat: "no-repeat",
-              width: "100%",
-              margin: "0px 100px 0px 0px",
-            }}
           >
             <Projects></Projects>
           </Container>
           <Container
+          id='aboutme'
+            fluid="true"
+          >
+            <AboutMe></AboutMe>
+          </Container>
+
+          
+          <Container
             id="skills"
             fluid="true"
-            style={{
-              height: "relative",
-              backgroundSize: "50% 100%",
-              backgroundColor: "white",
-              backgroundRepeat: "no-repeat",
-              width: "100%",
-              margin: "0px 100px 0px 0px",
-            }}
             onScroll={() => {
               console.log("im focused");
             }}
@@ -127,15 +99,7 @@ export class App extends React.Component {
           <Container
             id="experience"
             fluid="true"
-            style={{
-              height: "relative",
-              width: "auto",
-              backgroundSize: "100%",
-              backgroundColor: "#ccffff",
-              backgroundRepeat: "no-repeat",
-              width: "100%",
-              margin: "0px 100px 0px 0px",
-            }}
+          
             onScroll={() => {
               console.log("im focused");
             }}
@@ -146,14 +110,7 @@ export class App extends React.Component {
           <Container
             id="education"
             fluid="true"
-            style={{
-              height: "relative",
-              backgroundSize: "50% 100%",
-              backgroundColor: "white",
-              backgroundRepeat: "no-repeat",
-              width: "100%",
-              margin: "0px 100px 0px 30px",
-            }}
+            
           >
         <Education></Education>
           </Container>

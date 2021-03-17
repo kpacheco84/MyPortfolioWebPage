@@ -25,7 +25,7 @@ const Education = () => {
     {
       image: team,
       school: "Team Treehouse",
-      title: "TechDegree: FullStack Javascript",
+      title: "TechDegree: React Full Stack Javascript",
       dates: "November 2018 - July 2019",
       info: "",
     },
@@ -35,20 +35,13 @@ const Education = () => {
 
   const renderCard = (card, index) => {
     return (
-      <div className="col-md-4">
+      <div >
         <Card
-          style={{
-            width: "25rem",
-            height: "430px",
-            marginTop: "20px",
-            marginBottom: "50px",
-          }}
+         className='edu_card'
           key={index}
           imgsrc={card.image}
         >
-          <Card.Header
-            style={{ backgroundColor: "#0EE5C4", height: "50px" }}
-          ></Card.Header>
+          
           <Card.Body>
             <Card.Title style={{ paddingBottom: "10px" }}>
               {card.school}{" "}
@@ -71,7 +64,7 @@ const Education = () => {
     );
   };
   return (
-    <div>
+    <div className='edu_section'>
       <Rotate bottom right cascade>
         <br></br>
         <br></br>
@@ -82,9 +75,9 @@ const Education = () => {
           style={{
             justifyContent: "center",
             paddingLeft: "5%",
-            marginTop: "100px",
+            marginTop: "50px",
             paddingRight: "5%",
-            paddingBottom: "150px",
+            paddingBottom: "80px",
           }}
         >
           {edu.map(renderCard)}

@@ -8,77 +8,61 @@ import FontAwesome from "react-fontawesome";
 const Footer = () => {
   return (
     <div>
-      <Navbar
-        className="navbar navbar-custom bg-primary"
+      <footer
+        className="footer"
         
         //fixed="bottom"
-      >
-        <Container>
+      ><div>
           <a href="https://www.linkedin.com/in/k-p-693183193" target="_blank">
             <FontAwesome
-              className="super-crazy-colors"
+              className="super-crazy-colors footer_icons"
               name="linkedin"
               size="2x"
-              style={{
-                textShadow: "0 1px 0 rgba(0, 0, 0, 0.1)",
-                color: "white",
-                marginLeft: "700px",
-                padding: "10px",
-                textAlign: "right",
-              }}
+            
             />
           </a>
+          </div>
+          <div>
           <a href="https://github.com/kpacheco84" target="_blank">
             <FontAwesome
-              className="super-crazy-colors "
+              className="super-crazy-colors footer_icons"
               name="github"
               //cssModule={faStyles}
               size="2x"
-              style={{
-                textShadow: "0 1px 0 rgba(0, 0, 0, 0.1)",
-                color: "white",
-                padding: "10px",
-                textAlign: "right",
-              }}
+             
             />
           </a>
+          </div>
+          <div>
           <a href="mailto: katherinepacheco001@gmail.com">
             <FontAwesome
-              className="super-crazy-colors"
+              className="super-crazy-colors footer_icons"
               name="envelope"
               //cssModule={faStyles}
               size="2x"
-              style={{
-                textShadow: "0 1px 0 rgba(0, 0, 0, 0.1)",
-                color: "white",
-                padding: "10px 10px 10px 10px",
-              }}
+              
             />
           </a>
+          </div>
+          <div>
+          <div className='footer_name'>
           <label
-            style={{
-              fontWeight: "50",
-              fontStyle: "italic",
-              fontSize: "22px",
-              color: "white",
-              textAlign: "right",
-            }}
+           
           >
             <FontAwesome
-              className="super-crazy-colors "
+              className="super-crazy-colors footer_icons"
               name="copyright"
               size="1x"
-              style={{
-                textShadow: "0 1px 0 rgba(0, 0, 0, 0.1)",
-                color: "white",
-                padding: "10px",
-                textAlign: "right",
-              }}
+            
             />
-            Katherine Pacheco 2020
+            
+            Katherine Pacheco 2021
+            
           </label>
-        </Container>
-      </Navbar>
+          </div>
+          </div>
+     
+      </footer>
     </div>
   );
 };

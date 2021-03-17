@@ -19,7 +19,7 @@ const Skills = () => {
     {
       image: "globe",
       title: "Collaboration Tools",
-      tech: ["Jira", "Asana", "Slack", "Github", "Git"],
+      tech: ["Jira", "Asana", "Slack", "Github", "Git","GoToMeeting"],
     },
     {
       image: "rocket",
@@ -39,11 +39,12 @@ const Skills = () => {
     return (
       <div className="p-3" id="skills">
         <Card
-          style={{ width: "18rem", height: "400px", padding: "20px" }}
+        className='skills_cards'
+         
           key={index}
           imgsrc={card.image}
         >
-          <Card.Header style={{ backgroundColor: "#0EE5C4", height: "100px" }}>
+          <Card.Header style={{ backgroundColor: "var(--white)", height: "100px" , textAlign:'center'}}>
             <FontAwesome
               className="super-crazy-colors"
               name={card.image}
@@ -51,7 +52,7 @@ const Skills = () => {
               size="3x"
               style={{
                 textShadow: "0 1px 0 rgba(0, 0, 0, 0.1)",
-                color: "white",
+                color: "var(--black)",
                 padding: "20px",
               }}
             />
@@ -87,10 +88,16 @@ const Skills = () => {
     );
   };
   return (
-    <div style={{ textAlign: "center", paddingTop: "30px" }}>
-      <Flip top delay={1000}>
-        <h1 style={{ paddingTop: "40px", textAlign: "center" }}>Skills</h1>
-      </Flip>
+    <div className='skills'>
+     
+    <Flip top delay={1000}>
+    <div style={{ paddingTop: "20px", textAlign: "center", width:'100%'}}>
+    <h1 >Skills</h1>
+    </div>
+  </Flip>
+   
+     
+      <div>
       <div
         className="row"
         style={{
@@ -104,6 +111,8 @@ const Skills = () => {
         </Flip>
       </div>
     </div>
+    </div>
+  
   );
 };
 

@@ -2,7 +2,7 @@ import React,{useState, useEffect} from "react";
 import "../App.css";
 
 import { Navbar, Nav,Modal,Accordion, Row, Column } from "react-bootstrap";
-
+import Roll from 'react-reveal/Roll';
 
 import nav_favicon from '../assets/nav_favicon.svg';
 import FontAwesome from "react-fontawesome";
@@ -13,8 +13,6 @@ const Navigation = () => {
 
 
   const [click, setClick] = useState(false);
-  const handleClick=()=> setClick(!click);
-  const closeMobileMenu=()=> setClick(false);
   const [button,setButton]=useState(true);
   const [showMenu,setShowMenu]=useState(true);
   const [btns,setBtns]=useState(true);
@@ -39,8 +37,9 @@ window.addEventListener('resize',showButton);
 
 const menu = [
   {link:"home",name:'Home'},
-  {link:"aboutme",name:'About Me'},
+ 
   {link:"projects",name:'Projects'},
+  {link:"aboutme",name:'About Me'},
   {link:"skills",name:'Skills'},
   {link:"experience",name:'Experience'},
   {link:"education",name:'Education'}
@@ -74,24 +73,30 @@ return(
       
     <div >
       <Navbar
-        className="navbar nav-item nav-link"
+        className="nav-link"
         fixed="top"
+       
       >
-        <div style={{display:"flex",justifyContent:'space-between',width:'100%'}}>
+        <div style={{display:"flex",justifyContent:'space-between',alignContent:'center',width:'100%'}}>
 
 
-      <img src={nav_favicon} style={{height:'80px'}}/>
-      <div>
-      { !button ?<FontAwesome
+        <Roll top duration={3000}>
+          <div> <img src={nav_favicon} style={{height:'80px'}}/></div></Roll>
+          <div >
+      { !button ?
+      
+      <FontAwesome
       /*this causes a toggle effect*/
       onClick={()=>setShowMenu(!showMenu)}
                 className="icon_menu"
                 name="bars"
                 size="2x"
+              
                 style={{color:'#fe1f4e'}}
               />:''
          }
          </div>
+     
     </div>
     <div className={'nav-menu-items'}>
   
