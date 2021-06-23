@@ -90,7 +90,7 @@ export class App extends React.Component {
             id="skills"
             fluid="true"
             onScroll={() => {
-              console.log("im focused");
+              
             }}
           >
             <Skills></Skills>
@@ -101,7 +101,7 @@ export class App extends React.Component {
             fluid="true"
           
             onScroll={() => {
-              console.log("im focused");
+              
             }}
           >
             <Experience></Experience>

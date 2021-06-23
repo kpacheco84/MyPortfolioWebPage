@@ -42,7 +42,7 @@ const Projects = () => {
       image: reflections,
       title: "Reflections Electronics Pro - Intranet",
       desc:"Internal Service Request Portal",
-      tech: ["AWS S3", "AWS RDS PostgreSQL","React", "Ant-Design", "React Hooks"],
+      tech: ["React","AWS S3", "AWS Amplify","GraphQL", "Ant-Design", "React Hooks"],
       github: "",
       run: "",
       pics: "test",
