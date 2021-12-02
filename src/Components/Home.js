@@ -1,41 +1,43 @@
-import React, {Component} from 'react';
-import { Container, Row, Col} from 'react-bootstrap';
-import '../App.css';
-import {Fade, Reveal, Flip, Zoom} from 'react-reveal'
+import React, { Component } from 'react'
+import { Container, Row, Col } from 'react-bootstrap'
+import '../App.css'
+import { Fade, Reveal, Flip, Zoom } from 'react-reveal'
 
-const  Header = () => {
+import hero_svg from '../assets/hero_svg.svg'
+import hero_phrase from '../assets/hero_phrase.svg'
+import FontAwesome from 'react-fontawesome'
 
-  
- 
-    return (
-<div className='hero'>
-<Container fluid='true' className ='header' >
-   
-  <div className='header_title'>
-      <Row>
-          <Col>
-        
-            <h1><span className='header_title_first'>i am</span>  Katherine Pacheco <span className='header_title_second'>and i'm a</span></h1> 
-         
-        </Col>
-    </Row>
-     <Row>
-         <Col>
-        <Zoom delay={300} duration={3000}><h2>Full Stack Software Developer</h2>  </Zoom>
-        </Col>
-        </Row>
-        <Row>
-            <Col>
-            <a href="mailto: katherinepacheco001@gmail.com"><button className='btn_contact'>Contact Me</button></a>
-            </Col>
-        </Row>
-      </div>
+const Header = () => {
+  return (
+    <div className="hero">
+      <Container fluid="true" className="header">
+        <div className="header_title">
+          <div className="content_left">
+            <Row>
+              <Col>
+                <img style={{ width: '350px' }} src={hero_phrase} />
+              </Col>
+            </Row>
 
-</Container>
-</div>
+            <Row>
+              <Col>
+                <Zoom left>
+                  <a href="mailto: katherinepacheco001@gmail.com">
+                    <button className="btn_contact">Contact Me</button>
+                  </a>
+                </Zoom>
+              </Col>
+            </Row>
+          </div>
+        </div>
+        <div className="content_right">
+          <Fade duration={2000}>
+            <img className="hero_img" src={hero_svg}></img>
+          </Fade>
+        </div>
+      </Container>
+    </div>
+  )
+}
 
-    )
-};
-
-
-export default Header;
+export default Header

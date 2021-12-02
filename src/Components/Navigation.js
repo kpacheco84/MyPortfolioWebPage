@@ -1,112 +1,175 @@
-import React,{useState, useEffect} from "react";
-import "../App.css";
+import React, { useState, useEffect } from 'react'
+import '../App.css'
 
-import { Navbar, Nav,Modal,Accordion, Row, Column } from "react-bootstrap";
-import Roll from 'react-reveal/Roll';
+import { Navbar, Nav, Modal, Accordion, Row, Column } from 'react-bootstrap'
+import Slide from 'react-reveal'
 
-import nav_favicon from '../assets/nav_favicon.svg';
-import FontAwesome from "react-fontawesome";
-import Experience from "./Experience";
-
+import nav_favicon from '../assets/nav_favicon.svg'
+import FontAwesome from 'react-fontawesome'
+import Experience from './Experience'
+import kp_logo from '../assets/kp_logo.svg'
 
 const Navigation = () => {
+  const [click, setClick] = useState(false)
+  const [button, setButton] = useState(true)
+  const [showMenu, setShowMenu] = useState(true)
+  const [btns, setBtns] = useState(true)
 
-
-  const [click, setClick] = useState(false);
-  const [button,setButton]=useState(true);
-  const [showMenu,setShowMenu]=useState(true);
-  const [btns,setBtns]=useState(true);
-
-  const showButton=()=>{
-      if(window.innerWidth <= 960){
-          setButton(false);
-          setBtns(false);
-          setShowMenu(false);
-      }else{
-          setButton(true);
-          setBtns(true);
-          setShowMenu(true);
-      }
-  };
+  const showButton = () => {
+    if (window.innerWidth <= 960) {
+      setButton(false)
+      setBtns(false)
+      setShowMenu(false)
+    } else {
+      setButton(true)
+      setBtns(true)
+      setShowMenu(true)
+    }
+  }
   //React Website Tutorial - Beginner React JS Project Fully Responsive
-useEffect(()=>{
-  showButton();
-},[]);
+  useEffect(() => {
+    showButton()
+  }, [])
 
-window.addEventListener('resize',showButton);
+  window.addEventListener('resize', showButton)
 
-const menu = [
-  {link:"home",name:'Home'},
- 
-  {link:"projects",name:'Projects'},
-  {link:"aboutme",name:'About Me'},
-  {link:"skills",name:'Skills'},
-  {link:"experience",name:'Experience'},
-  {link:"education",name:'Education'}
-];
+  const menu1 = [
+    { id: 1, link: 'home', name: 'Home' },
 
-/* flex column*/
-const navmenu = ()=>{
-return(
-  <>
-  {showMenu ? 
-  <Nav
-         className={!button ? "nav flex-column":"nav"  }
-         defaultActiveKey="#home"
-        >
-        
-        {menu.map(menu => <Nav.Link
-            className="navlink"
-            href={'#'+menu.link}
-            data-section={'#'+menu.link}
-            style={{color:'white'}}
-             onClick={!button ? ()=>setShowMenu(!showMenu) :''} 
-          >{menu.name}
-          </Nav.Link>
-        )}</Nav> :''}
+    { id: 2, link: 'projects', name: 'Projects' },
+    { id: 3, link: 'aboutme', name: 'About Me' },
+  ]
+
+  const menu2 = [
+    { id: 4, link: 'skills', name: 'Skills' },
+    { id: 5, link: 'experience', name: 'Experience' },
+    { id: 6, link: 'education', name: 'Education' },
+  ]
+
+  /*
+let homeLink = document.querySelector('[href~="#home"]');
+
+console.log(homeLink);
+
+navigationLinks.forEach((link) => {
+  let section = document.querySelector(link.dataset.section);
+
+  let sectionHeight = section.offsetHeight;
+
+  if (
+    section.offsetTop - navbarHeight <= scrollPosition &&
+    section.offsetTop - navbarHeight + sectionHeight > fromTop
+  ) {
+    homeLink.classList.remove("active");
+    link.classList.add("active");
+  } else {
+    link.classList.remove("active");
+  }
+});
+});
+*/
+  /* flex column*/
+  const navmenu1 = () => {
+    return (
+      <>
+        {showMenu ? (
+          <Nav
+            className={!button ? 'nav flex-column' : 'nav1'}
+            defaultActiveKey="#home"
+          >
+            {menu1.map((menu) => (
+              <Nav.Link
+                className="navlink"
+                href={'#' + menu.link}
+                data-section={'#' + menu.link}
+                style={{ color: 'white' }}
+                onClick={!button ? () => setShowMenu(!showMenu) : ''}
+              >
+                {menu.name}
+              </Nav.Link>
+            ))}
+          </Nav>
+        ) : (
+          ''
+        )}
       </>
-)
-}
+    )
+  }
+  const navmenu2 = () => {
+    return (
+      <>
+        {showMenu ? (
+          <Nav
+            className={!button ? 'nav flex-column' : 'nav2'}
+            defaultActiveKey="#home"
+          >
+            {menu2.map((menu) => (
+              <Nav.Link
+                className="navlink"
+                href={'#' + menu.link}
+                data-section={'#' + menu.link}
+                style={{ color: 'white' }}
+                onClick={!button ? () => setShowMenu(!showMenu) : ''}
+              >
+                {menu.name}
+              </Nav.Link>
+            ))}
+          </Nav>
+        ) : (
+          ''
+        )}
+      </>
+    )
+  }
 
   return (
     <div>
-      
-    <div >
-      <Navbar
-        className="nav-link"
-        fixed="top"
-       
-      >
-        <div style={{display:"flex",justifyContent:'space-between',alignContent:'center',width:'100%'}}>
+      <div>
+        <Navbar className="nav-link" fixed="top">
+          <div className="nav-menu-items">{navmenu1()}</div>
+          <Slide top duration={5000}>
+            <img
+              src={kp_logo}
+              style={{
+                width: '200px',
+                position: 'absolute',
+                marginTop: '100px',
+                marginLeft: '40%',
+                alignItems: 'center',
+              }}
+            />
+          </Slide>
+          {/*this is the code for the hamburger menu of links*/}
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignContent: 'center',
+              width: '100%',
+            }}
+          >
+            <div>
+              {!button ? (
+                <FontAwesome
+                  /*this causes a toggle effect*/
+                  onClick={() => setShowMenu(!showMenu)}
+                  className="icon_menu"
+                  name="bars"
+                  size="2x"
+                  style={{ color: '#c82586' }}
+                />
+              ) : (
+                ''
+              )}
+            </div>
+          </div>
+          {/*end of hamburger menu*/}
 
-
-        <Roll top duration={3000}>
-          <div> <img src={nav_favicon} style={{height:'80px'}}/></div></Roll>
-          <div >
-      { !button ?
-      
-      <FontAwesome
-      /*this causes a toggle effect*/
-      onClick={()=>setShowMenu(!showMenu)}
-                className="icon_menu"
-                name="bars"
-                size="2x"
-              
-                style={{color:'#fe1f4e'}}
-              />:''
-         }
-         </div>
-     
-    </div>
-    <div className={'nav-menu-items'}>
-  
-        {navmenu()}
-        </div>
+          <div className="nav-menu-items">{navmenu2()}</div>
         </Navbar>
-
+      </div>
     </div>
-    </div>
-  );
-};
+  )
+}
 
-export default Navigation;
+export default Navigation

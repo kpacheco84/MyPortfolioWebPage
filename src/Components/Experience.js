@@ -3,6 +3,7 @@ import '../App.css'
 import { Card } from 'react-bootstrap'
 import FontAwesome from 'react-fontawesome'
 import { Reveal, Fade, Rotate } from 'react-reveal'
+import working from '../assets/working.svg'
 import { map } from 'jquery'
 const Experience = () => {
   const [active, setActive] = useState(1)
@@ -87,9 +88,7 @@ const Experience = () => {
     <div className="experience">
       <Fade delay={2000} duration={2000}>
         <div>
-          <h1 style={{ paddingTop: '20px', textAlign: 'center' }}>
-            Experience
-          </h1>
+          <h1>Work Experience</h1>
         </div>
       </Fade>
       <div>
@@ -109,6 +108,10 @@ const Experience = () => {
           </Fade>
           <Fade right duration={2000} delay={1000}>
             <div className="experience_box">
+              <img
+                src={working}
+                style={{ width: '80px', position: 'relative' }}
+              />
               <div>
                 <h5>{activeExp.company}</h5>
                 <h6>{activeExp.dates}</h6>

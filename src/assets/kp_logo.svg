@@ -1,0 +1,58 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="348.212"
+  height="348.212"
+  viewBox="0 0 348.212 348.212"
+>
+  <defs>
+    <filter
+      id="Ellipse_61"
+      x="0"
+      y="0"
+      width="348.212"
+      height="348.212"
+      filterUnits="userSpaceOnUse"
+    >
+      <feOffset dx="-2" dy="18" input="SourceAlpha" />
+      <feGaussianBlur stdDeviation="18.5" result="blur" />
+      <feFlood flood-color="#e2e0e0" flood-opacity="0.161" />
+      <feComposite operator="in" in2="blur" />
+      <feComposite in="SourceGraphic" />
+    </filter>
+  </defs>
+  <g
+    id="Group_246"
+    data-name="Group 246"
+    transform="translate(-826.894 25.606)"
+  >
+    <g transform="matrix(1, 0, 0, 1, 826.89, -25.61)" filter="url(#Ellipse_61)">
+      <circle
+        id="Ellipse_61-2"
+        data-name="Ellipse 61"
+        cx="100"
+        cy="100"
+        r="100"
+        transform="matrix(0.98, -0.21, 0.21, 0.98, 57.5, 79.08)"
+        fill="#0f0a34"
+      />
+    </g>
+    <text
+      id="K_P"
+      data-name="K  P"
+      transform="translate(1003 153)"
+      fill="#c82586"
+      font-size="72"
+      font-family="AbrilFatface-Regular, Abril Fatface"
+    ><tspan x="-62.208" y="0" xml:space="preserve">K  P</tspan></text>
+    <line
+      id="Line_12"
+      data-name="Line 12"
+      y2="100"
+      transform="translate(1003 75)"
+      fill="none"
+      stroke="#4eeaf6"
+      stroke-width="8"
+    />
+  </g>
+</svg>

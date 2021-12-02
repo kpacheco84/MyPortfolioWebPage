@@ -1,22 +1,22 @@
-import React from "react";
-import "./App.css";
+import React from 'react'
+import './App.css'
 
-import Projects from "./Components/Projects";
+import Projects from './Components/Projects'
 
 //import { NavLink, Link } from 'react-router-dom';
 //import {Navbar,Modal,Button,Row,Col, Form,ButtonGroup, Alert,ToggleButton, ToggleButtonGroup} from 'react-bootstrap';
-import "bootstrap/dist/css/bootstrap.min.css";
+import 'bootstrap/dist/css/bootstrap.min.css'
 //import bootstrap from 'bootstrap'
-import Navigation from "./Components/Navigation";
-import Home from "./Components/Home";
-import { Navbar, Container } from "react-bootstrap";
-import Footer from "./Components/Footer";
-import AboutMe from "./Components/AboutMe";
-import Education from "./Components/Education";
-import Skills from "./Components/Skills";
-import Experience from "./Components/Experience";
-import ProjectPicsModal from "./Components/ProjectPicsModal.js";
-import { Reveal, Fade, Rotate } from "react-reveal";
+import Navigation from './Components/Navigation'
+import Home from './Components/Home'
+import { Navbar, Container } from 'react-bootstrap'
+import Footer from './Components/Footer'
+import AboutMe from './Components/AboutMe'
+import Education from './Components/Education'
+import Skills from './Components/Skills'
+import Experience from './Components/Experience'
+import ProjectPicsModal from './Components/ProjectPicsModal.js'
+import { Reveal, Fade, Rotate } from 'react-reveal'
 
 /*dont use container with image maybe use image in div*/
 /* Make each section needed*/
@@ -29,96 +29,75 @@ import { Reveal, Fade, Rotate } from "react-reveal";
 //make containers responsive
 //Properly classify each skill and desciptions
 //enlarge icons you hover over
-import $ from "jquery";
+import $ from 'jquery'
+import Quote from './Components/Quote'
 
-require("intersection-observer");
+require('intersection-observer')
 
 export class App extends React.Component {
   render() {
     //Active navigation on scroll
-    window.addEventListener("scroll", (event) => {
-      let navigationLinks = document.querySelectorAll("nav.navbar.nav-link a");
-      let fromTop = window.scrollY;
-      let navbar = document.querySelector("nav.navbar.nav-link");
-      let navbarHeight = navbar.offsetHeight;
-      let scrollPosition = window.scrollY;
+    window.addEventListener('scroll', (event) => {
+      let navigationLinks = document.querySelectorAll('nav.navbar.nav-link a')
+      let fromTop = window.scrollY
+      let navbar = document.querySelector('nav.navbar.nav-link')
+      let navbarHeight = navbar.offsetHeight
+      let scrollPosition = window.scrollY
 
-      let homeLink = document.querySelector('[href~="#home"]');
+      let homeLink = document.querySelector('[href~="#home"]')
 
-      console.log(homeLink);
+      console.log(homeLink)
 
       navigationLinks.forEach((link) => {
-        let section = document.querySelector(link.dataset.section);
+        let section = document.querySelector(link.dataset.section)
 
-        let sectionHeight = section.offsetHeight;
+        let sectionHeight = section.offsetHeight
 
         if (
           section.offsetTop - navbarHeight <= scrollPosition &&
           section.offsetTop - navbarHeight + sectionHeight > fromTop
         ) {
-          homeLink.classList.remove("active");
-          link.classList.add("active");
+          homeLink.classList.remove('active')
+          link.classList.add('active')
         } else {
-          link.classList.remove("active");
+          link.classList.remove('active')
         }
-      });
-    });
+      })
+    })
 
     return (
       <div>
-        <Container fluid="true"  id="home">
+        <Container fluid="true" id="home">
           <Navigation id="nav"></Navigation>
 
-          <Home/>
+          <Home />
           <div></div>
-          
-          <Container
-            id="projects"
-            fluid="true"
-          >
-            <Projects></Projects>
+          <Container id="quote" fluid="true">
+            <Quote />
           </Container>
-          <Container
-          id='aboutme'
-            fluid="true"
-          >
+          <Container id="aboutme" fluid="true">
             <AboutMe></AboutMe>
           </Container>
+          <Container id="projects" fluid="true">
+            <Projects></Projects>
+          </Container>
 
-          
-          <Container
-            id="skills"
-            fluid="true"
-            onScroll={() => {
-              
-            }}
-          >
+          <Container id="skills" fluid="true" onScroll={() => {}}>
             <Skills></Skills>
           </Container>
 
-          <Container
-            id="experience"
-            fluid="true"
-          
-            onScroll={() => {
-              
-            }}
-          >
+          <Container id="experience" fluid="true" onScroll={() => {}}>
             <Experience></Experience>
           </Container>
 
-          <Container
-            id="education"
-            fluid="true"
-            
-          >
-        <Education></Education>
+          <Container id="education" fluid="true">
+            <Education></Education>
           </Container>
-         
+
           <Footer></Footer>
         </Container>
       </div>
-    );
+    )
   }
 }
-export default App;
+export default App
