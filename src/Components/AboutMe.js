@@ -22,21 +22,18 @@ const AboutMe = () => {
             <div>
               <section>
                 <p>
-                  I have over 8 years experience in Business Intelligence and
-                  Data analysis and 3 years Application Development Experience.
-                </p>
-                <br></br>
-                <p>
+                  I have over 10 years experience in Business Intelligence and
+                  Data analysis and 5 years Application Development Experience.
                   I enjoy developing on-demand and ad-hoc reports and
                   interactive dashboards. I also enjoy creating applications
                   that help businesses automate, grow or make their business
-                  processes more efficient, and if I can add embedded analytics
-                  to an application its{' '}
+                  processes more efficient, and if I can add visuals and
+                  analytics to an application its{' '}
                   <span style={{ fontSize: '40px', color: 'red' }}>
                     &#9829;
                   </span>
                 </p>
-                <br></br>
+
                 <p>
                   My skills continue to grow and evolve as I do consider myself
                   I life long learner.

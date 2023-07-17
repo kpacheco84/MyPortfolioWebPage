@@ -12,9 +12,23 @@ const Experience = () => {
     {
       id: 1,
       image: '',
+      company: 'WebMD Health + Limeade, LLC',
+      title: 'Business Intelligence Developer III',
+      dates: 'January 2022 - Present',
+      resp: [
+        'Full Stack Software development for the development of a customer facing report application/ Dashboard using a modern front end framework (React, HTML, CSS, React-Bootstrap, Re-Charts ).',
+        'Back End Development in Python (FastAPI Framework) creating new RESTAPI endpoints',
+        'Develop reports and dashboards using Tableau. Data sources include AWS Redshift and Azure Data lake',
+        'Use modern cloud technology such as AWS and Azure Devops',
+        'Collaborate and develop dbt models to feed reporting and apis (for AWS to Azure migration)',
+      ],
+    },
+    {
+      id: 2,
+      image: '',
       company: 'Reflections Electronics Pro, LLC',
       title: 'Fullstack Software Developer (freelance)',
-      dates: 'September 2020 - Ongoing',
+      dates: 'September 2020 - March 2021',
       resp: [
         'Built React.js application. Stored and launched on AWS. Serverless architecture using AWS Amplify Datastore (GraphQL and DynamoDB).',
         'Amazon Cognito for Authentication.',
@@ -22,7 +36,7 @@ const Experience = () => {
       ],
     },
     {
-      id: 2,
+      id: 3,
       image: '',
       company: 'Femwell Group Health, LLC',
       title: 'Business Intelligence & Application Developer',
@@ -37,7 +51,7 @@ const Experience = () => {
       ],
     },
     {
-      id: 3,
+      id: 4,
       image: '',
       company: 'Financial Recovery Group, LLC',
       title: 'Data Analyst',
@@ -50,7 +64,7 @@ const Experience = () => {
       ],
     },
     {
-      id: 4,
+      id: 5,
       image: '',
       company: 'Royal Carribean, LLC',
       title: 'Business Analyst Intern',
@@ -73,8 +87,6 @@ const Experience = () => {
   ]
 
   const [activeExp, setActiveExp] = useState(exp[0])
-
-  console.log('this is the current active exp', activeExp)
 
   const handleSelect = (id) => {
     var resp = exp.filter((exp) => exp.id === id)[0]
@@ -108,14 +120,26 @@ const Experience = () => {
           </Fade>
           <Fade right duration={2000} delay={1000}>
             <div className="experience_box">
-              <img
-                src={working}
-                style={{ width: '80px', position: 'relative' }}
-              />
-              <div>
-                <h5>{activeExp.company}</h5>
-                <h6>{activeExp.dates}</h6>
-                <h6>{activeExp.title}</h6>
+              <div className="experience_box_header">
+                <div style={{ width: '20%' }}>
+                  <img
+                    src={working}
+                    style={{ width: '80px', position: 'relative' }}
+                  />
+                </div>
+                <div
+                  style={{
+                    width: '800%',
+                    textAlign: 'center',
+                    paddingRight: '80px',
+                  }}
+                >
+                  <h5>{activeExp.company}</h5>
+                  <h6>{activeExp.dates}</h6>
+                  <h6>
+                    <b>{activeExp.title}</b>
+                  </h6>
+                </div>
               </div>
               <ul>
                 {activeExp.resp.map((resp) => (

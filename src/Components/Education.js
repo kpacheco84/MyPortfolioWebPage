@@ -41,12 +41,23 @@ const Education = () => {
             <Card.Title style={{ paddingBottom: '10px' }}>
               {card.school}{' '}
             </Card.Title>
-            <Card.Subtitle>{card.title}</Card.Subtitle>
+            <Card.Subtitle>
+              <b>{card.title}</b>
+            </Card.Subtitle>
             <CardImg
               src={card.image}
               style={{ height: '180px', width: '50%', paddingTop: '20px' }}
             ></CardImg>
-            <Card.Text style={{ paddingBottom: '20px' }}>{card.info}</Card.Text>
+            <Card.Text
+              style={{
+                paddingBottom: '20px',
+                paddingTop: '15px',
+                textAlign: 'center',
+                textIndent: '0px',
+              }}
+            >
+              {card.info}
+            </Card.Text>
 
             <br></br>
             <br></br>

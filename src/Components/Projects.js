@@ -201,7 +201,6 @@ const Projects = () => {
             {index === 0 ? (
               <FontAwesome
                 disabled={card.run_flag}
-                className="slow_spin"
                 name="desktop"
                 //cssModule={faStyles}
                 size="2x"
@@ -215,7 +214,6 @@ const Projects = () => {
               <a href={card.run} target="_blank" rel="noreferrer">
                 <FontAwesome
                   disabled={card.run_flag}
-                  className="slow-spin"
                   name="desktop"
                   //cssModule={faStyles}
                   size="2x"
@@ -229,7 +227,6 @@ const Projects = () => {
             )}
             {index === 0 ? (
               <FontAwesome
-                className="slow-spin"
                 name="github"
                 size="2x"
                 style={{
@@ -241,7 +238,7 @@ const Projects = () => {
             ) : (
               <a href={card.github} target="_blank" rel="noreferrer">
                 <FontAwesome
-                  className="super-crazy-colors slow-spin icon"
+                  className="super-crazy-colors icon"
                   name="github"
                   size="2x"
                   style={{

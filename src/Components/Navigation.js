@@ -134,7 +134,7 @@ navigationLinks.forEach((link) => {
                 width: '200px',
                 position: 'absolute',
                 marginTop: '100px',
-                marginLeft: '40%',
+                marginLeft: '42%',
                 alignItems: 'center',
               }}
             />

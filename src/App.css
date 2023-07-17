@@ -197,7 +197,7 @@ p {
 
 .nav-link {
   color: var(--white);
-  font-size: 16px;
+  font-size: 20px;
 }
 
 .navlink {
@@ -206,6 +206,7 @@ p {
 
 a.navlink.nav-link.active {
   text-decoration: underline solid var(--fusia) 3px;
+  text-underline-offset: 8px;
   background-color: var(--dark_blue);
   color: var(--white);
 }
@@ -374,6 +375,12 @@ a.navlink.nav-link.active {
   color: var(--white);
   margin-bottom: 2%;
 }
+
+.experience_box_header {
+  display:flex;
+
+
+}
 /*
 @media only screen and (max-width:960px){
   .experience_box{
@@ -381,6 +388,12 @@ overflow-y: scroll;
   }
 }
 */
+h1 {
+  font-size: larger;
+}
+p{
+  font-size: large;
+}
 
 .experience_box > h1,
 h2,
